@@ -7,7 +7,7 @@
 
 ### 🌟 Motivational & Self-Improvement
 ```javascript
-"subreddit": "selfimprovement"
+"subreddit": "GetMotivated"
 "content_type": "motivational speech"
 ```
 **หัวข้อที่ได้**: ความสำเร็จ, การพัฒนาตนเอง, การตั้งเป้าหมาย, การเอาชนะอุปสรรค
@@ -31,7 +31,7 @@
 
 ### 💭 Thoughts & Philosophy
 ```javascript
-"subreddit": "showerthoughts"
+"subreddit": "Showerthoughts"
 "content_type": "thought-provoking insight"
 ```
 **หัวข้อที่ได้**: ความคิดแปลก ๆ, มุมมองใหม่, ปรัชญาชีวิต
@@ -52,7 +52,7 @@
 **หัวข้อที่ได้**: เรื่องเล่าตลก ๆ, ความผิดพลาดน่าขำ, ประสบการณ์แปลก ๆ
 
 ```javascript
-"subreddit": "maliciouscompliance"
+"subreddit": "MaliciousCompliance"
 "content_type": "satisfying story recap"
 ```
 **หัวข้อที่ได้**: เรื่องการปฏิบัติตามกฎอย่างเคร่งครัด, ความพึงพอใจ
@@ -73,7 +73,7 @@
 **หัวข้อที่ได้**: คำแนะนำการเงิน, การออม, การลงทุน
 
 ```javascript
-"subreddit": "lifeprotips"
+"subreddit": "LifeProTips"
 "content_type": "practical life tip"
 ```
 **หัวข้อที่ได้**: เทคนิคใช้ชีวิต, ไอเดียอำนวยความสะดวก
@@ -82,13 +82,13 @@
 
 ### 🍳 Skills & Hobbies
 ```javascript
-"subreddit": "cookingforbeginners"
-"content_type": "cooking tutorial summary"
+"subreddit": "AskReddit"
+"content_type": "interesting discussion summary"
 ```
-**หัวข้อที่ได้**: สูตรอาหารง่าย ๆ, เทคนิคทำอาหาร
+**หัวข้อที่ได้**: คำถามน่าสนใจ, การสนทนาลึก ๆ, ประสบการณ์ชีวิต
 
 ```javascript
-"subreddit": "getmotivated"
+"subreddit": "GetMotivated"
 "content_type": "inspirational message"
 ```
 **หัวข้อที่ได้**: ข้อความสร้างแรงบันดาลใจ, คำคมกำลังใจ
@@ -243,15 +243,15 @@
 ```
 **ไอเดีย**: คำแนะนำการเงินที่เข้าใจง่าย
 
-#### 7. Entrepreneur Stories → Success Principles
+#### 7. Ask Reddit Stories → Human Insights
 ```javascript
 {
-  "subreddit": "entrepreneur",
-  "content_type": "business success story",
+  "subreddit": "AskReddit",
+  "content_type": "human experience story",
   "art_style": "Vibrant Digital Pop Art"
 }
 ```
-**ไอเดีย**: เรื่องราวความสำเร็จที่สร้างแรงบันดาลใจ
+**ไอเดีย**: เรื่องราวประสบการณ์ชีวิตจาก Ask Reddit
 
 ### 🎭 Entertainment & Drama
 
@@ -265,27 +265,27 @@
 ```
 **ไอเดีย**: เรื่องความยุติธรรมที่ทำให้พอใจ
 
-#### 9. Relationship Advice → Life Lessons
+#### 9. Life Pro Tips → Daily Wisdom
 ```javascript
 {
-  "subreddit": "relationship_advice",
-  "content_type": "relationship wisdom",
+  "subreddit": "LifeProTips",
+  "content_type": "daily life wisdom",
   "art_style": "Soft Watercolor Inspiration"
 }
 ```
-**ไอเดีย**: บทเรียนจากปัญหาความรัก
+**ไอเดีย**: เทคนิคชีวิตที่ใช้ได้จริงในแต่ละวัน
 
 ### 🧠 Psychology & Self-Help
 
-#### 10. Ask Reddit Insights → Human Nature
+#### 10. Shower Thoughts → Deep Reflections
 ```javascript
 {
-  "subreddit": "askreddit",
-  "content_type": "human psychology insight",
+  "subreddit": "Showerthoughts",
+  "content_type": "philosophical reflection",
   "art_style": "Cozy Slice of Life"
 }
 ```
-**ไอเดีย**: ความเข้าใจธรรมชาติของมนุษย์
+**ไอเดีย**: ความคิดลึก ๆ ที่กระตุ้นการไตร่ตรอง
 
 ---
 
@@ -356,7 +356,7 @@
 ```javascript
 // Day 1-7: Different motivational themes
 {
-  "subreddit": "getmotivated",
+  "subreddit": "GetMotivated",
   "content_type": "monday motivation booster",
   "art_style": "Vibrant Digital Pop Art"
 }
@@ -365,7 +365,7 @@
 #### Wisdom Wednesday
 ```javascript
 {
-  "subreddit": "showerthoughts",
+  "subreddit": "Showerthoughts",
   "content_type": "midweek wisdom",
   "art_style": "Soft Watercolor Inspiration"
 }
@@ -385,7 +385,7 @@
 #### New Year Resolutions (January)
 ```javascript
 {
-  "subreddit": "selfimprovement",
+  "subreddit": "GetMotivated",
   "content_type": "new year transformation guide",
   "art_style": "Hopeful Minimalist"
 }
@@ -394,7 +394,7 @@
 #### Back to School (September)
 ```javascript
 {
-  "subreddit": "studytips",
+  "subreddit": "LifeProTips",
   "content_type": "student success strategy",
   "art_style": "Cozy Slice of Life"
 }
@@ -415,7 +415,7 @@
 #### Viral Challenges
 ```javascript
 {
-  "subreddit": "lifeprotips",
+  "subreddit": "LifeProTips",
   "content_type": "practical tip inspired by viral trend",
   "art_style": "Vibrant Digital Pop Art"
 }
