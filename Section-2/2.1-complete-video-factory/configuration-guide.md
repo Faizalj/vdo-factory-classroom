@@ -87,30 +87,23 @@ GET http://vdo-factory:8000/health
 
 ### Art Style Configuration
 ```javascript
-"art_style": "Use the following prompt as a template for the image generation prompt, use the content to create a unique image for the scene.\n\nCreate an artistic image in a vibrant, emotionally uplifting illustration style, with warm sunlight and a soft pastel or golden color palette. The subject is a figure [doing something meaningful, like reaching toward the sky, walking through a blooming field, reading a book under morning light, or anything that fits the theme], captured with a balanced perspective that brings the viewer closer to the scene.\n\nThe surroundings should be rich in detail, with natural elements like flowers, trees, birds, or clouds subtly enhancing the hopeful mood. The composition should emphasize growth, warmth, and inner strength.\n\nThe overall visual should feel like a moment of inspiration and quiet triumph — as if it were taken from a beautifully illustrated storybook about resilience and personal transformation."
+"art_style": "ใส่ Art Style prompt ที่เลือกจาก art-style-templates.md"
 ```
 
-**Style Templates**:
+**📋 ดู Art Style Templates**: [art-style-templates.md](./art-style-templates.md)
 
-#### Motivational Style
-```
-vibrant, emotionally uplifting illustration style, with warm sunlight and soft pastel colors...
-```
+**ตัวอย่าง Art Styles ที่มีให้เลือก**:
+1. 🌸 **Soft Watercolor Inspiration** - อบอุ่น สงบ เหมือนหนังสือภาพ
+2. 🌈 **Vibrant Digital Pop Art** - สดใส แนวเยียวยาหัวใจ  
+3. ✨ **Magical Realism** - ฝัน ๆ เหมือนความหวังในโลกแฟนตาซี
+4. 🏠 **Cozy Slice of Life** - ธรรมดาที่แสนอบอุ่น
+5. 🎯 **Hopeful Minimalist** - น้อยแต่มาก อารมณ์ลึก
 
-#### Educational Style
-```
-clean, professional illustration style with clear diagrams and easy-to-understand visuals...
-```
-
-#### News Style
-```
-modern, journalistic style with clean graphics and informative layouts...
-```
-
-#### Entertainment Style
-```
-colorful, fun cartoon style with expressive characters and dynamic scenes...
-```
+**วิธีใช้งาน**:
+1. เปิดไฟล์ `art-style-templates.md`
+2. เลือก style ที่ต้องการ
+3. Copy ข้อความใน code block ทั้งหมด
+4. Paste ลงในช่อง `art_style` ของ "Configure me" node
 
 ## 🎤 Text-to-Speech Configuration
 
