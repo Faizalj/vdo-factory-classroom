@@ -1,0 +1,337 @@
+# ⚙️ Configuration Guide - Complete Video Factory
+
+## 🎯 ภาพรวม
+คู่มือนี้จะแนะนำการตั้งค่าและปรับแต่ง workflow ให้เหมาะกับความต้องการของคุณ
+
+## 🔧 หัวใจของการตั้งค่า: "Configure me" Node
+
+### พารามิเตอร์หลัก
+```javascript
+{
+  // Video Factory API Configuration
+  "vdo_factory_api_url": "http://vdo-factory:8000",
+  
+  // Reddit Content Source
+  "subreddit": "selfimprovement",
+  "update_reddit_stories": false,
+  
+  // Content Generation
+  "content_type": "motivational speech",
+  "art_style": "vibrant, emotionally uplifting illustration style...",
+  
+  // Text-to-Speech Settings
+  "tts_engine": "kokoro",
+  "kokoro_voice": "af_heart",
+  "kokoro_speed": 1,
+  
+  // Chatterbox TTS (Alternative)
+  "chatterbox_exaggeration": 0.5,
+  "chatterbox_cfg_weight": 0.5,
+  "chatterbox_temperature": 0.8,
+  "chatterbox_clone_voice_id": "",
+  
+  // Audio Settings
+  "background_music_id": "",
+  "background_music_volume": 0.2
+}
+```
+
+## 🔗 API Configuration
+
+### Video Factory API URL
+```javascript
+"vdo_factory_api_url": "http://vdo-factory:8000"
+```
+**สำคัญ**: ใช้ชื่อ container `vdo-factory` เพื่อให้ n8n เชื่อมต่อได้ในเครือข่าย Docker
+
+### Health Check Endpoint
+Workflow จะทดสอบการเชื่อมต่อที่:
+```
+GET http://vdo-factory:8000/health
+```
+
+## 📊 Reddit Data Source
+
+### Subreddit Selection
+```javascript
+"subreddit": "selfimprovement"  // เปลี่ยนตามที่ต้องการ
+```
+
+**ตัวอย่าง subreddits ที่เหมาะสม**:
+- `selfimprovement` - การพัฒนาตนเอง
+- `getmotivated` - แรงบันดาลใจ
+- `todayilearned` - ความรู้ใหม่
+- `explainlikeimfive` - คำอธิบายเรื่องซับซ้อน
+- `showerthoughts` - ความคิดน่าสนใจ
+
+### Update Behavior
+```javascript
+"update_reddit_stories": false  // true = ดึงข้อมูลใหม่จาก Reddit
+```
+- `false`: ใช้ข้อมูลที่มีใน Google Sheets
+- `true`: ดึงข้อมูลใหม่ 100 posts จาก Reddit
+
+## 🎨 Content Generation
+
+### Content Type
+```javascript
+"content_type": "motivational speech"
+```
+
+**ตัวอย่าง content types**:
+- `motivational speech` - คำพูดสร้างแรงบันดาลใจ
+- `educational explanation` - การอธิบายเชิงการศึกษา
+- `news summary` - สรุปข่าวสาร
+- `story narration` - การเล่าเรื่อง
+- `product review` - รีวิวผลิตภัณฑ์
+
+### Art Style Configuration
+```javascript
+"art_style": "Use the following prompt as a template for the image generation prompt, use the content to create a unique image for the scene.\n\nCreate an artistic image in a vibrant, emotionally uplifting illustration style, with warm sunlight and a soft pastel or golden color palette. The subject is a figure [doing something meaningful, like reaching toward the sky, walking through a blooming field, reading a book under morning light, or anything that fits the theme], captured with a balanced perspective that brings the viewer closer to the scene.\n\nThe surroundings should be rich in detail, with natural elements like flowers, trees, birds, or clouds subtly enhancing the hopeful mood. The composition should emphasize growth, warmth, and inner strength.\n\nThe overall visual should feel like a moment of inspiration and quiet triumph — as if it were taken from a beautifully illustrated storybook about resilience and personal transformation."
+```
+
+**Style Templates**:
+
+#### Motivational Style
+```
+vibrant, emotionally uplifting illustration style, with warm sunlight and soft pastel colors...
+```
+
+#### Educational Style
+```
+clean, professional illustration style with clear diagrams and easy-to-understand visuals...
+```
+
+#### News Style
+```
+modern, journalistic style with clean graphics and informative layouts...
+```
+
+#### Entertainment Style
+```
+colorful, fun cartoon style with expressive characters and dynamic scenes...
+```
+
+## 🎤 Text-to-Speech Configuration
+
+### Engine Selection
+```javascript
+"tts_engine": "kokoro"  // หรือ "chatterbox"
+```
+
+### Kokoro TTS Settings
+```javascript
+{
+  "kokoro_voice": "af_heart",     // เสียงที่ใช้
+  "kokoro_speed": 1               // ความเร็วการพูด (0.5-2.0)
+}
+```
+
+**Available Kokoro Voices**:
+- `af_heart` - เสียงหญิงอบอุ่น
+- `af_neutral` - เสียงหญิงเป็นกลาง
+- `am_casual` - เสียงชายธรรมดา
+- `am_formal` - เสียงชายเป็นทางการ
+
+### Chatterbox TTS Settings
+```javascript
+{
+  "chatterbox_exaggeration": 0.5,    // ความเน้นเสียง (0.0-1.0)
+  "chatterbox_cfg_weight": 0.5,      // การควบคุมโทนเสียง (0.0-1.0)
+  "chatterbox_temperature": 0.8,     // ความหลากหลายเสียง (0.0-1.0)
+  "chatterbox_clone_voice_id": ""     // ID ของ voice sample
+}
+```
+
+**Chatterbox Voice Cloning**:
+1. อัปโหลด audio sample ไปยัง Video Factory
+2. ใส่ `file_id` ที่ได้รับใน `chatterbox_clone_voice_id`
+3. เปลี่ยน `tts_engine` เป็น `"chatterbox"`
+
+## 🎵 Audio Settings
+
+### Background Music
+```javascript
+{
+  "background_music_id": "",        // ID ของไฟล์เพลง
+  "background_music_volume": 0.2    // ระดับเสียงเพลง (0.0-1.0)
+}
+```
+
+**การเพิ่มเพลงพื้นหลัง**:
+1. อัปโหลดไฟล์เพลงไปยัง Video Factory API
+2. ใส่ `file_id` ที่ได้รับใน `background_music_id`
+3. ปรับ volume ให้เหมาะสม (แนะนำ 0.1-0.3)
+
+## 🎛️ Advanced Configuration
+
+### Google Sheets Setup
+workflow ต้องการ Google Sheets 2 อัน:
+
+#### Sheet 1: Reddit Stories Storage
+```
+Document ID: ใส่ ID ของ Google Sheet ที่สร้าง
+Columns: id, title, content, video_id
+```
+
+#### Sheet 2: Video Processing Tracking  
+```
+Document ID: ใส่ ID ของ Google Sheet ที่สร้าง
+Columns: id, title, content, status, video_id
+```
+
+### Credentials Configuration
+ตั้งค่า credentials เหล่านี้ใน n8n:
+
+#### OpenAI API
+```
+Credential Name: OpenAi account
+Type: OpenAI
+API Key: sk-xxxxxxxxxxxxxxxx
+```
+
+#### Google Sheets OAuth2
+```
+Credential Name: Google Sheets account  
+Type: Google Sheets OAuth2 API
+```
+
+#### Together AI (FLUX)
+```
+Credential Name: Together AI test
+Type: HTTP Bearer Auth
+Token: xxxxxxxxxxxxxxxx
+```
+
+#### YouTube OAuth2 (Optional)
+```
+Credential Name: YouTube account
+Type: YouTube OAuth2 API
+```
+
+## 🔧 Performance Tuning
+
+### Image Generation
+```javascript
+// ใน "Generate AI image" node
+{
+  "width": 720,     // ลดเป็น 512 เพื่อความเร็ว
+  "height": 1280,   // ลดเป็น 512 เพื่อความเร็ว
+  "model": "black-forest-labs/FLUX.1-schnell-Free"
+}
+```
+
+### Wait Times
+```javascript
+// ปรับ wait times ตามความต้องการ
+"Wait until TTS generated": 60000,      // 1 นาที
+"Wait until video generated": 60000,    // 1 นาที  
+"Wait until videos merged": 60000,      // 1 นาที
+"Wait for rate limit": 10000            // 10 วินาที
+```
+
+### Batch Processing
+```javascript
+// ใน "Loop Over Items" node
+{
+  "batchSize": 1,     // เพิ่มเป็น 2-3 เพื่อความเร็ว
+  "options": {}
+}
+```
+
+## 🎯 Use Case Configurations
+
+### Configuration 1: Educational Content
+```javascript
+{
+  "vdo_factory_api_url": "http://vdo-factory:8000",
+  "subreddit": "explainlikeimfive",
+  "content_type": "educational explanation", 
+  "kokoro_voice": "af_neutral",
+  "kokoro_speed": 0.9,
+  "art_style": "clean, educational illustration style...",
+  "background_music_volume": 0.1
+}
+```
+
+### Configuration 2: News Content
+```javascript
+{
+  "vdo_factory_api_url": "http://vdo-factory:8000",
+  "subreddit": "worldnews",
+  "content_type": "news summary",
+  "kokoro_voice": "am_formal", 
+  "kokoro_speed": 1.0,
+  "art_style": "modern, journalistic style...",
+  "background_music_id": "news_intro_music_id"
+}
+```
+
+### Configuration 3: Entertainment Content
+```javascript
+{
+  "vdo_factory_api_url": "http://vdo-factory:8000",
+  "subreddit": "tifu",
+  "content_type": "entertaining story",
+  "tts_engine": "chatterbox",
+  "chatterbox_exaggeration": 0.7,
+  "art_style": "colorful, fun cartoon style...",
+  "background_music_volume": 0.3
+}
+```
+
+## 🔍 Troubleshooting Configuration
+
+### Common Configuration Issues
+
+#### Issue: Health Check Fails
+```
+Error: Server isn't ready
+Solution: ตรวจสอบ vdo_factory_api_url และ Docker containers
+```
+
+#### Issue: TTS Generation Fails
+```
+Error: TTS failed
+Solutions:
+- ตรวจสอบ tts_engine setting
+- ลองเปลี่ยน voice
+- ลดความยาวข้อความ
+```
+
+#### Issue: Image Generation Rate Limited
+```
+Error: Rate limit exceeded  
+Solutions:
+- เพิ่ม wait time
+- ลดจำนวน scenes
+- ใช้ Together AI account ที่มี quota มากขึ้น
+```
+
+#### Issue: Google Sheets Permission Denied
+```
+Error: Permission denied
+Solutions:
+- Re-authenticate Google Sheets credential
+- ตรวจสอบ document ID
+- ตรวจสอบ sharing permissions ของ sheets
+```
+
+## 💡 Best Practices
+
+### Content Quality
+- ใช้ข้อความที่เหมาะสมกับ TTS (หลีกเลี่ยงอักขระพิเศษ)
+- ปรับ content_type ให้เข้ากับข้อมูลจาก subreddit
+- ทดสอบ art_style กับเนื้อหาจริงก่อน
+
+### Performance
+- เริ่มต้นด้วย 2-3 scenes สำหรับทดสอบ
+- ใช้ image size เล็กสำหรับ development
+- Monitor API usage และ costs
+
+### Reliability  
+- ตั้งค่า wait times ให้เพียงพอ
+- ใช้ retry logic สำหรับ API calls
+- สำรอง configuration settings
+
+การตั้งค่าที่ดีจะทำให้ workflow ทำงานได้อย่างมั่นคงและให้ผลลัพธ์ที่ต้องการ!
