@@ -57,12 +57,16 @@ GET http://vdo-factory:8000/health
 "subreddit": "selfimprovement"  // เปลี่ยนตามที่ต้องการ
 ```
 
-**ตัวอย่าง subreddits ที่เหมาะสม**:
+**📋 ดู Subreddit Ideas**: [subreddit-content-ideas.md](./subreddit-content-ideas.md)
+
+**ตัวอย่าง subreddits ยอดนิยม**:
 - `selfimprovement` - การพัฒนาตนเอง
 - `getmotivated` - แรงบันดาลใจ
 - `todayilearned` - ความรู้ใหม่
 - `explainlikeimfive` - คำอธิบายเรื่องซับซ้อน
 - `showerthoughts` - ความคิดน่าสนใจ
+- `tifu` - เรื่องเล่าตลก ๆ
+- `lifeprotips` - เทคนิคใช้ชีวิต
 
 ### Update Behavior
 ```javascript
@@ -75,15 +79,18 @@ GET http://vdo-factory:8000/health
 
 ### Content Type
 ```javascript
-"content_type": "motivational speech"
+"content_type": "motivational speech"  // เปลี่ยนตามประเภทเนื้อหา
 ```
 
-**ตัวอย่าง content types**:
-- `motivational speech` - คำพูดสร้างแรงบันดาลใจ
+**📋 ดู Content Type Ideas**: [subreddit-content-ideas.md](./subreddit-content-ideas.md)
+
+**ตัวอย่าง content types ยอดนิยม**:
+- `motivational speech` - คำพูดสร้างแรงบันดาลใจ (default)
+- `engaging story narration` - เล่าเรื่องให้น่าฟัง
 - `educational explanation` - การอธิบายเชิงการศึกษา
-- `news summary` - สรุปข่าวสาร
-- `story narration` - การเล่าเรื่อง
-- `product review` - รีวิวผลิตภัณฑ์
+- `fascinating quick facts` - ข้อเท็จจริงสั้น ๆ น่าสนใจ
+- `practical life advice` - คำแนะนำใช้ชีวิต
+- `mind-bending perspective` - มุมมองกระตุ้นความคิด
 
 ### Art Style Configuration
 ```javascript
