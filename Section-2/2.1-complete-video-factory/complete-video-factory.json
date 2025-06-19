@@ -5,10 +5,10 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        2020,
-        460
+        2400,
+        320
       ],
-      "id": "6a5cb0af-78c5-456a-b744-c5b3b550079e",
+      "id": "5166b6e1-9499-40cd-9c41-d993e1638332",
       "name": "Limit"
     },
     {
@@ -18,10 +18,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        100,
-        920
+        480,
+        780
       ],
-      "id": "8c8d0f08-8870-4845-a8a8-311f9d5f3c32",
+      "id": "50589031-834f-41db-befe-d61f41cc5ec2",
       "name": "Loop Over Items"
     },
     {
@@ -56,10 +56,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        380,
-        840
+        760,
+        700
       ],
-      "id": "d703aa1e-985e-4203-a248-d53556853897",
+      "id": "6f4e6bcb-c739-429a-bb32-4e37b7b1a300",
       "name": "Generate AI image",
       "alwaysOutputData": false,
       "credentials": {
@@ -95,10 +95,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        620,
-        780
+        1000,
+        640
       ],
-      "id": "e0420cce-4e9a-4565-a2b3-d1609c27f348",
+      "id": "f001d5c1-3c36-4e60-bffd-7404b22061d3",
       "name": "Upload image to server",
       "retryOnFail": true
     },
@@ -110,10 +110,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1520,
-        960
+        1900,
+        820
       ],
-      "id": "143a1bf5-a9cb-4743-b5fe-8be0ec18d226",
+      "id": "4da8b8e2-b683-4520-9933-e9061b25470e",
       "name": "Get status of TTS generation",
       "retryOnFail": true
     },
@@ -202,10 +202,10 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        1680,
-        960
+        2060,
+        820
       ],
-      "id": "c017826c-ad9f-4932-a022-f6c7ed74bd5c",
+      "id": "a834afcc-02c4-48a3-8c57-a664c8f26302",
       "name": "TTS status switch"
     },
     {
@@ -225,10 +225,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2380,
-        760
+        2760,
+        620
       ],
-      "id": "ec39f677-ed6c-4ceb-a8a1-5959564a68eb",
+      "id": "f1af540c-ebc4-4694-8e45-d4d9f03ecbde",
       "name": "Start generating captioned TTS video"
     },
     {
@@ -239,10 +239,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2780,
-        760
+        3160,
+        620
       ],
-      "id": "68d33dc8-d853-41cd-b142-4e666a05c76f",
+      "id": "45c01da4-47a8-4786-8fdc-bf1322a074ad",
       "name": "Get video generation status",
       "retryOnFail": true
     },
@@ -331,10 +331,10 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        2960,
-        760
+        3340,
+        620
       ],
-      "id": "42aa14b5-7f37-4611-a9a7-5350085497ec",
+      "id": "48705259-6208-4267-ab0a-9d8440df4e28",
       "name": "Video generation switch"
     },
     {
@@ -366,10 +366,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3220,
-        1040
+        3600,
+        900
       ],
-      "id": "6cb6ca2d-8c37-4406-abeb-c26b2cb6368e",
+      "id": "979ab3a7-9e07-40bf-a9bb-50cb634f81c2",
       "name": "Setup media fields"
     },
     {
@@ -380,10 +380,10 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        380,
-        1360
+        760,
+        1220
       ],
-      "id": "e208b0c6-3ffd-4004-9675-3034200bfb05",
+      "id": "734b6a13-60d3-42dc-84ba-99270884e39a",
       "name": "Combine loop items"
     },
     {
@@ -417,10 +417,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        580,
-        1360
+        960,
+        1220
       ],
-      "id": "0e9bb98c-ebbc-4bc7-91a2-1a3433319e7a",
+      "id": "704c31ad-720e-4399-943d-350809fa9209",
       "name": "Start merging the videos"
     },
     {
@@ -431,10 +431,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1000,
-        1360
+        1380,
+        1220
       ],
-      "id": "0a7ac9c7-9b5d-43e8-a956-27ba9f5aaf54",
+      "id": "a92ae4f1-f9d3-44d1-a4c2-b1fa7135517b",
       "name": "Get status of the video merge"
     },
     {
@@ -522,10 +522,10 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        1180,
-        1360
+        1560,
+        1220
       ],
-      "id": "a5ca8a19-feff-48b2-b72b-ecf984cb961c",
+      "id": "6a6fac91-1d64-4020-9aaa-dafffd4e4c97",
       "name": "Video merge status switch"
     },
     {
@@ -545,10 +545,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1980,
-        1360
+        2360,
+        1220
       ],
-      "id": "e7d7e379-aac7-4e97-8fcc-d078ad0545f4",
+      "id": "f1b09245-8cc0-4255-94cd-487800caa69c",
       "name": "Setup final video download URL"
     },
     {
@@ -558,10 +558,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        620,
-        940
+        1000,
+        800
       ],
-      "id": "40bb69cd-28e2-426e-a2a2-3c782d8602b6",
+      "id": "9e324666-5ccd-4643-9b49-2e6ecac6179e",
       "name": "Wait for the error / rate limit to go away",
       "webhookId": "18721630-ff12-4eb6-8a9a-c0d229d2b66d"
     },
@@ -572,10 +572,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        1340,
-        960
+        1720,
+        820
       ],
-      "id": "588a96c5-1cb0-4839-be3d-acb25c2735b8",
+      "id": "e97febae-0037-4434-ae6d-60f7f95123b9",
       "name": "Wait until the TTS gets generated",
       "webhookId": "6d2b79ce-2195-4a5e-b298-c88325874732"
     },
@@ -614,10 +614,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1160,
-        960
+        1540,
+        820
       ],
-      "id": "e25c73dc-a492-4e1f-91aa-57f5c5ef5739",
+      "id": "0ad394e4-96b0-4d70-9f96-1b434130a3c7",
       "name": "Start generating TTS (chatterbox)"
     },
     {
@@ -627,10 +627,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        2580,
-        760
+        2960,
+        620
       ],
-      "id": "a0103616-7951-4556-80d7-8e701058b1b2",
+      "id": "6868f426-0c24-4378-9db1-ac59f90bf538",
       "name": "Wait until the video gets generated",
       "webhookId": "b3ef2a8a-d699-4735-86fe-c586c6cb3bc8"
     },
@@ -641,10 +641,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        800,
-        1360
+        1180,
+        1220
       ],
-      "id": "a2f360be-9163-4219-b1b2-aa4a7ea21dfc",
+      "id": "c7766962-a37d-4a8f-bc60-6bc13109936d",
       "name": "Wait until the videos gets merged together",
       "webhookId": "ef9f90e0-9b56-4b49-b7a3-42cdbe90784e"
     },
@@ -676,10 +676,10 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.6,
       "position": [
-        1900,
-        420
+        2280,
+        280
       ],
-      "id": "dcd1a125-62b6-4c5e-9af5-c6750cc95f9a",
+      "id": "c86f3930-3722-4708-a465-79003fd60833",
       "name": "Get story",
       "alwaysOutputData": true,
       "credentials": {
@@ -749,10 +749,10 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        940,
-        760
+        1320,
+        620
       ],
-      "id": "cfbcfa3e-eabd-4523-92b1-599646f8b02d",
+      "id": "d5e18688-4295-473d-a8f0-50fdc7d4c6d4",
       "name": "TTS switch"
     },
     {
@@ -772,10 +772,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1940,
-        940
+        2320,
+        800
       ],
-      "id": "a82d3db2-b0ac-4d04-bc03-6c6ee5f0425c",
+      "id": "617e35bd-21e2-4c54-9514-479a77e084c7",
       "name": "Setup TTS file_id"
     },
     {
@@ -795,10 +795,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2820,
-        320
+        3200,
+        180
       ],
-      "id": "2f5bad2c-a486-432a-80e9-e4c5ef9e1f83",
+      "id": "9049eb91-6882-4384-b871-57d0ea5f1684",
       "name": "Cleanup text"
     },
     {
@@ -814,10 +814,10 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        2740,
-        520
+        3120,
+        380
       ],
-      "id": "46347ca9-dad6-4649-956e-f2cc798fea57",
+      "id": "b7157892-1e36-466a-9e6f-aa19d5d5e9ea",
       "name": "OpenAI Chat Model",
       "credentials": {
         "openAiApi": {
@@ -843,10 +843,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2200,
-        760
+        2580,
+        620
       ],
-      "id": "3fb68170-2105-475d-ab72-319d0176b7da",
+      "id": "b4428a6b-b8ec-49e6-9751-f3eb9601d10e",
       "name": "Global TTS audio id"
     },
     {
@@ -858,10 +858,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1860,
-        240
+        2240,
+        100
       ],
-      "id": "99c90e3e-95c8-4af1-b321-de8899f24596",
+      "id": "84842777-7b22-4137-9556-37f3b9ebeb58",
       "name": "Sticky Note4"
     },
     {
@@ -873,10 +873,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2500,
-        240
+        2880,
+        100
       ],
-      "id": "ecf2ea8e-2237-426e-9680-c358705e6bb3",
+      "id": "afdde3be-fd87-4e51-8d9e-904daaa37d30",
       "name": "Sticky Note5"
     },
     {
@@ -888,10 +888,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        280,
-        1240
+        660,
+        1100
       ],
-      "id": "6dfb8f30-1d2f-4b45-b4b7-ccc1e448d228",
+      "id": "65bdd94e-bcd3-49d2-a211-30b7ac6afbf4",
       "name": "Sticky Note6"
     },
     {
@@ -989,10 +989,10 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.6,
       "position": [
-        1660,
-        1380
+        2040,
+        1240
       ],
-      "id": "5ea1b73c-c311-4d9c-8583-63755b1d15cf",
+      "id": "0c5b8887-d00f-4fef-ae39-840af47c59ed",
       "name": "Save the video id",
       "credentials": {
         "googleSheetsOAuth2Api": {
@@ -1010,10 +1010,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        280,
-        680
+        660,
+        540
       ],
-      "id": "26d594da-c856-4cd8-887b-17400dd1b5cd",
+      "id": "40259e4d-7092-43f9-9cbf-7cdc0a470004",
       "name": "Sticky Note7"
     },
     {
@@ -1025,10 +1025,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        900,
-        680
+        1280,
+        540
       ],
-      "id": "f199f811-cc86-41c4-97c8-d0d235cbd7ac",
+      "id": "e4634bfa-a216-4ca4-a5cf-be47a0fdf7e5",
       "name": "Sticky Note8"
     },
     {
@@ -1040,10 +1040,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2140,
-        680
+        2520,
+        540
       ],
-      "id": "f427a9d1-04ec-41eb-b24e-037fb2b81c48",
+      "id": "dce83f11-9a62-4962-b2da-e7ba2e070de9",
       "name": "Sticky Note9"
     },
     {
@@ -1055,10 +1055,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1500,
-        1240
+        1880,
+        1100
       ],
-      "id": "2737901d-e941-4e4e-a2ba-65c00445c56b",
+      "id": "310073a2-4529-43ff-a1dd-ffd4dfc6f1ba",
       "name": "Sticky Note11"
     },
     {
@@ -1069,10 +1069,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2380,
-        1360
+        2760,
+        1220
       ],
-      "id": "a23692c9-10e9-4452-b309-4ded20a6189b",
+      "id": "9a1818d0-e221-40c2-bb79-418c3b9c0f2c",
       "name": "Download the video"
     },
     {
@@ -1085,10 +1085,10 @@
       "type": "@n8n/n8n-nodes-langchain.informationExtractor",
       "typeVersion": 1.1,
       "position": [
-        2940,
-        320
+        3320,
+        180
       ],
-      "id": "fbbf01bc-831e-484e-a48e-eedc71704bed",
+      "id": "6d80f0ac-0fd6-4e5a-a4d5-aa9600eba118",
       "name": "Create the script"
     },
     {
@@ -1100,10 +1100,10 @@
       "type": "@n8n/n8n-nodes-langchain.chainLlm",
       "typeVersion": 1.7,
       "position": [
-        2540,
-        320
+        2920,
+        180
       ],
-      "id": "2e05c700-6876-45d4-9899-2eaef0147e86",
+      "id": "3e5d0915-1e94-4531-8fa9-abc56b8b93ce",
       "name": "Create the motivational speech"
     },
     {
@@ -1114,10 +1114,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        3260,
-        480
+        3640,
+        340
       ],
-      "id": "691593f1-12d1-423b-919f-ee6f2fe5ffee",
+      "id": "36b9dc81-daac-4512-af9c-7f863f78408a",
       "name": "Split Out"
     },
     {
@@ -1130,10 +1130,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1920,
-        1240
+        2300,
+        1100
       ],
-      "id": "9feb63b9-e34b-45be-b234-b05181fd1fad",
+      "id": "cfc3d30d-ed68-4a04-8e6c-a130f427a314",
       "name": "Sticky Note13"
     },
     {
@@ -1167,13 +1167,13 @@
           }
         }
       },
-      "id": "164225ab-ca38-45bd-bf8b-cc566452353f",
+      "id": "a0be3c9b-04ad-425f-afd2-07faf0801d1a",
       "name": "Start Youtube upload",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        2180,
-        1360
+        2560,
+        1220
       ],
       "disabled": true
     },
@@ -1197,13 +1197,13 @@
         "inputDataFieldName": "data",
         "options": {}
       },
-      "id": "356cb60a-9894-4b7b-8d36-69a00b855924",
+      "id": "6cbc707c-e36a-46f4-8602-1301f46f1cdf",
       "name": "Upload video to YouTube",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        2580,
-        1360
+        2960,
+        1220
       ],
       "disabled": true
     },
@@ -1215,10 +1215,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1240,
-        500
+        1620,
+        360
       ],
-      "id": "c600688e-f594-4322-97f1-20797474fdaf",
+      "id": "b6b68e38-7ab4-4606-b59b-11909e20b452",
       "name": "Get stories from reddit"
     },
     {
@@ -1229,10 +1229,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        1380,
-        500
+        1760,
+        360
       ],
-      "id": "6afefd1c-e2a7-4311-81a1-c1449063bdc7",
+      "id": "4bab1360-194b-4d84-a3f6-8c4621a00b84",
       "name": "For Each story"
     },
     {
@@ -1318,10 +1318,10 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.6,
       "position": [
-        1520,
-        500
+        1900,
+        360
       ],
-      "id": "4d87b0b4-abc3-435a-8519-f178ea715f45",
+      "id": "b8689790-1c75-41f1-bb30-cd9274b2f695",
       "name": "Save it to Google Sheets",
       "retryOnFail": true,
       "credentials": {
@@ -1340,10 +1340,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1100,
-        240
+        1480,
+        100
       ],
-      "id": "bcce4937-9622-41d3-a428-64045c3a525f",
+      "id": "c5753ca4-6ee7-443b-b862-2c7a2694ee2e",
       "name": "Sticky Note17"
     },
     {
@@ -1384,10 +1384,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1640,
-        320
+        2020,
+        180
       ],
-      "id": "60319fe8-ae65-4314-b184-f015abd77474",
+      "id": "0a1ff271-db63-4cc5-8255-099918c4004f",
       "name": "Update reddit stories?"
     },
     {
@@ -1485,10 +1485,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        420,
-        400
+        800,
+        260
       ],
-      "id": "2e093d93-5124-448e-924d-6fbc942a12e9",
+      "id": "66d12450-c81e-4f90-8516-977e18b3433e",
       "name": "Configure me"
     },
     {
@@ -1501,10 +1501,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        280,
-        240
+        660,
+        100
       ],
-      "id": "1b91f086-7f73-42f8-8361-84d9d4755e21",
+      "id": "45b6974f-8825-4e02-ae24-4dbf1950b2b4",
       "name": "Sticky Note12"
     },
     {
@@ -1528,10 +1528,10 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.6,
       "position": [
-        1200,
-        320
+        1580,
+        180
       ],
-      "id": "f4b1f10c-1c3a-48bd-bbf2-4665ea8278f7",
+      "id": "4e37c3ba-c0fc-45d5-a508-13efe6702b06",
       "name": "Get one row from Sheets",
       "alwaysOutputData": true,
       "credentials": {
@@ -1568,10 +1568,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2140,
-        460
+        2520,
+        320
       ],
-      "id": "8a2ac2ce-1b78-44f3-99b0-26cbcfe1b7d3",
+      "id": "db70895f-1edf-4440-924e-a0f4a4eee8ab",
       "name": "If"
     },
     {
@@ -1581,10 +1581,10 @@
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        2320,
-        300
+        2700,
+        160
       ],
-      "id": "3044fa92-d9f1-46ce-8838-818002bce9eb",
+      "id": "4164f759-dae4-48cb-9ef2-109cb827308c",
       "name": "No more stories"
     },
     {
@@ -1595,10 +1595,10 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        1420,
-        320
+        1800,
+        180
       ],
-      "id": "4ccabf47-a5d3-423d-b1e3-bf9085b82ac2",
+      "id": "047d0ea8-69b7-40a7-976c-fcdd3bf6460b",
       "name": "Aggregate"
     },
     {
@@ -1609,10 +1609,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        720,
-        480
+        1100,
+        340
       ],
-      "id": "dc561273-ec35-4b8b-8e5f-1d046f64a635",
+      "id": "cc3acc30-0d55-4cce-b1da-5b673cca1f5c",
       "name": "HTTP Request",
       "onError": "continueErrorOutput"
     },
@@ -1623,10 +1623,10 @@
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        900,
-        380
+        1280,
+        240
       ],
-      "id": "547e8d04-228a-42d6-adc2-f8def9e96a99",
+      "id": "95584627-7382-4715-a117-c0580f6a82da",
       "name": "Server isn't ready"
     },
     {
@@ -1638,10 +1638,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        700,
-        240
+        1080,
+        100
       ],
-      "id": "0f8e5827-e492-4508-b8c2-6c142d50c28d",
+      "id": "a5e9ee01-3c9f-49bb-857f-4828f16f47ef",
       "name": "Sticky Note15"
     },
     {
@@ -1652,10 +1652,10 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        1680,
-        500
+        2060,
+        360
       ],
-      "id": "ee006dbd-0207-47f1-9778-a7d7e8828928",
+      "id": "96f7a7d3-4c0a-40c9-b378-1fc22967f7b6",
       "name": "Combine"
     },
     {
@@ -1667,10 +1667,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2840,
-        1240
+        3220,
+        1100
       ],
-      "id": "d8041b18-3d12-4d55-80b5-0b88d964d0fb",
+      "id": "68ad5054-08c1-4dad-bc58-0feb3836298d",
       "name": "Sticky Note"
     },
     {
@@ -1696,10 +1696,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2900,
-        1360
+        3280,
+        1220
       ],
-      "id": "fad36bbd-7e8e-4fc0-84ac-95c14b74322c",
+      "id": "90e661f1-aee3-4c4d-a15e-cf2f8170de1a",
       "name": "Set file ids to delete"
     },
     {
@@ -1711,10 +1711,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3220,
-        1360
+        3600,
+        1220
       ],
-      "id": "79cdbc24-b60e-4d4b-a15c-77c9d69d1325",
+      "id": "38a5267f-8411-4e80-ba1e-64add9dbea80",
       "name": "Delete tmp files"
     },
     {
@@ -1725,10 +1725,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        3060,
-        1360
+        3440,
+        1220
       ],
-      "id": "7fb5c83c-1623-40f2-892f-634a6133fe94",
+      "id": "4532d2e0-9bd0-4a6b-8663-af74deb94e57",
       "name": "For each file"
     },
     {
@@ -1736,10 +1736,10 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        120,
-        300
+        500,
+        160
       ],
-      "id": "198e3889-0ef2-4120-87f7-e809d0076716",
+      "id": "63690ef6-1768-4cbb-a304-3018d7378622",
       "name": "When clicking 'Execute workflow'"
     },
     {
@@ -1752,10 +1752,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -220,
-        -40
+        160,
+        -180
       ],
-      "id": "1dde86eb-a23a-45ef-afa1-32022d11d025",
+      "id": "62148d64-a48d-453c-bf88-8fb88af5da52",
       "name": "Sticky Note1"
     },
     {
@@ -1769,28 +1769,11 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        100,
-        500
+        480,
+        360
       ],
-      "id": "c288b648-3e62-44a1-b2ae-ed2d0010094d",
+      "id": "917f0a09-9f7d-4e07-b5d4-05afb3bae1d3",
       "name": "Schedule Trigger"
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {}
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.2,
-      "position": [
-        540,
-        300
-      ],
-      "id": "8b994f1f-6a59-48cf-ac01-96ec9da94193",
-      "name": "Schedule Trigger1"
     }
   ],
   "connections": {
