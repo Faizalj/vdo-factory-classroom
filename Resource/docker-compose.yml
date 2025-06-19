@@ -21,6 +21,17 @@ services:
     restart: always
     ports:
       - "8000:8000"
+    # GPU Configuration
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
     # ถ้ามี ENV อื่น เช่น API KEY ให้ใส่เพิ่มตรงนี้
 
 volumes:
