@@ -1,0 +1,703 @@
+{
+  "name": "AI Content Generator with Supabase",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -200,
+        300
+      ],
+      "id": "manual-trigger",
+      "name": "Start Workflow"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "supabase_url",
+              "name": "supabase_url",
+              "value": "https://your-project.supabase.co",
+              "type": "string"
+            },
+            {
+              "id": "supabase_key",
+              "name": "supabase_key",
+              "value": "your-anon-key",
+              "type": "string"
+            },
+            {
+              "id": "content_categories",
+              "name": "content_categories",
+              "value": [
+                "motivation and self-improvement",
+                "productivity and time management",
+                "mental health and wellness",
+                "personal finance and investing",
+                "relationships and communication",
+                "career development and leadership",
+                "health and fitness tips",
+                "mindfulness and meditation",
+                "entrepreneurship and business",
+                "technology and innovation"
+              ],
+              "type": "array"
+            },
+            {
+              "id": "content_types",
+              "name": "content_types",
+              "value": [
+                "motivational speech",
+                "educational tip",
+                "life hack",
+                "inspirational story",
+                "how-to guide",
+                "quick fact",
+                "advice column"
+              ],
+              "type": "array"
+            },
+            {
+              "id": "target_audience",
+              "name": "target_audience",
+              "value": "young professionals and students seeking personal growth",
+              "type": "string"
+            },
+            {
+              "id": "content_length",
+              "name": "content_length",
+              "value": "30-60 seconds when spoken",
+              "type": "string"
+            },
+            {
+              "id": "batch_size",
+              "name": "batch_size",
+              "value": 5,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        300
+      ],
+      "id": "config-node",
+      "name": "Configuration"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "tableId": "ai_generated_content",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "batch_id",
+              "fieldValue": "={{ 'batch_' + $now.toFormat('yyyyMMdd_HHmmss') }}"
+            },
+            {
+              "fieldId": "status",
+              "fieldValue": "generating"
+            },
+            {
+              "fieldId": "created_at",
+              "fieldValue": "={{ $now.toISO() }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        200,
+        300
+      ],
+      "id": "create-batch",
+      "name": "Create Content Batch",
+      "credentials": {
+        "supabaseApi": {
+          "id": "your-supabase-credentials-id",
+          "name": "Supabase API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "batch_counter",
+              "name": "batch_id",
+              "value": "={{ $json.batch_id }}",
+              "type": "string"
+            },
+            {
+              "id": "counter",
+              "name": "counter",
+              "value": "={{ Array.from({length: $('Configuration').item.json.batch_size}, (_, i) => i + 1) }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        400,
+        300
+      ],
+      "id": "setup-counter",
+      "name": "Setup Batch Counter"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "counter",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        600,
+        300
+      ],
+      "id": "split-batch",
+      "name": "Split Batch"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "selected_category",
+              "name": "selected_category",
+              "value": "={{ $('Configuration').item.json.content_categories[Math.floor(Math.random() * $('Configuration').item.json.content_categories.length)] }}",
+              "type": "string"
+            },
+            {
+              "id": "selected_type",
+              "name": "selected_type",
+              "value": "={{ $('Configuration').item.json.content_types[Math.floor(Math.random() * $('Configuration').item.json.content_types.length)] }}",
+              "type": "string"
+            },
+            {
+              "id": "unique_id",
+              "name": "content_id",
+              "value": "={{ 'ai_' + $now.toFormat('yyyyMMdd_HHmmss') + '_' + Math.random().toString(36).substr(2, 6) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        800,
+        300
+      ],
+      "id": "randomize-params",
+      "name": "Randomize Content Parameters"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4o-mini"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "You are an expert content creator specializing in engaging, viral short-form content for social media platforms like YouTube Shorts, TikTok, and Instagram Reels.",
+              "role": "system"
+            },
+            {
+              "content": "={{ \n'Create compelling ' + $json.selected_type + ' content focused on: ' + $json.selected_category + '\\n\\n' +\n'Target Audience: ' + $('Configuration').item.json.target_audience + '\\n' +\n'Content Length: ' + $('Configuration').item.json.content_length + '\\n\\n' +\n'Requirements:\\n' +\n'- Create original, engaging content that provides real value\\n' +\n'- Make it actionable and practical\\n' +\n'- Use a conversational, relatable tone\\n' +\n'- Include a strong hook in the first 3 seconds\\n' +\n'- End with a call-to-action or thought-provoking question\\n' +\n'- Ensure content is suitable for video format\\n\\n' +\n'IMPORTANT: You MUST format your response EXACTLY as shown below with each section on a new line:\\n\\n' +\n'TITLE: [Write a compelling title that would work as a YouTube video title]\\n' +\n'CONTENT: [Write the main script content for the video - this should be the actual spoken content]\\n' +\n'TAGS: [Write 5-7 relevant hashtags separated by commas, no # symbol needed]\\n' +\n'HOOK: [Write the opening line/hook for the video - first thing viewers will hear]\\n' +\n'CTA: [Write a call-to-action or engagement prompt for the end of the video]\\n\\n' +\n'Example format:\\n' +\n'TITLE: 5 Morning Habits That Changed My Life\\n' +\n'CONTENT: Ever wonder why some people seem to have endless energy? It starts with their morning routine. Here are 5 simple habits that can transform your entire day. First, drink a glass of water immediately when you wake up...\\n' +\n'TAGS: morning routine, productivity, self improvement, life hacks, motivation\\n' +\n'HOOK: Ever wonder why some people seem to have endless energy?\\n' +\n'CTA: Which habit will you try first? Let me know in the comments!'\n}}",
+              "role": "user"
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.8
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        1000,
+        300
+      ],
+      "id": "generate-content",
+      "name": "Generate AI Content",
+      "credentials": {
+        "openAiApi": {
+          "id": "your-openai-credentials-id",
+          "name": "OpenAI API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "parse_title",
+              "name": "title",
+              "value": "={{ \n  let titleMatch = $json.content.match(/TITLE:\\s*(.+?)(?=\\n|$)/i);\n  if (titleMatch) return titleMatch[1].trim();\n  \n  let lines = $json.content.split('\\n').filter(line => line.trim());\n  return lines[0]?.trim() || 'Untitled Content';\n}}",
+              "type": "string"
+            },
+            {
+              "id": "parse_content",
+              "name": "main_content",
+              "value": "={{ \n  let contentMatch = $json.content.match(/CONTENT:\\s*([\\s\\S]*?)(?=TAGS:|HOOK:|CTA:|$)/i);\n  if (contentMatch) return contentMatch[1].trim();\n  \n  let lines = $json.content.split('\\n');\n  if (lines.length > 1) {\n    return lines.slice(1).join('\\n').trim();\n  }\n  \n  return $json.content.trim();\n}}",
+              "type": "string"
+            },
+            {
+              "id": "parse_tags",
+              "name": "tags",
+              "value": "={{ \n  let tagsMatch = $json.content.match(/TAGS:\\s*(.+?)(?=\\n|$)/i);\n  if (tagsMatch) {\n    return tagsMatch[1].split(',').map(tag => tag.trim().replace('#', ''));\n  }\n  let category = $('Randomize Content Parameters').item.json.selected_category;\n  if (category.includes('motivation')) return ['motivation', 'selfimprovement', 'mindset'];\n  if (category.includes('productivity')) return ['productivity', 'timemanagement', 'efficiency'];\n  if (category.includes('health')) return ['health', 'fitness', 'wellness'];\n  return ['content', 'tips', 'advice'];\n}}",
+              "type": "array"
+            },
+            {
+              "id": "parse_hook",
+              "name": "hook",
+              "value": "={{ \n  let hookMatch = $json.content.match(/HOOK:\\s*(.+?)(?=\\n|$)/i);\n  if (hookMatch) return hookMatch[1].trim();\n  \n  let firstSentence = $json.main_content.match(/^[^.!?]*[.!?]/);\n  return firstSentence ? firstSentence[0].trim() : '';\n}}",
+              "type": "string"
+            },
+            {
+              "id": "parse_cta",
+              "name": "cta",
+              "value": "={{ \n  let ctaMatch = $json.content.match(/CTA:\\s*(.+?)(?=\\n|$)/i);\n  if (ctaMatch) return ctaMatch[1].trim();\n  \n  return 'What are your thoughts? Share in the comments below!';\n}}",
+              "type": "string"
+            },
+            {
+              "id": "word_count",
+              "name": "word_count",
+              "value": "={{ $json.main_content ? $json.main_content.split(' ').filter(word => word.length > 0).length : 0 }}",
+              "type": "number"
+            },
+            {
+              "id": "estimated_duration",
+              "name": "estimated_duration_seconds",
+              "value": "={{ Math.round(($json.word_count || 0) * 0.4) }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1200,
+        300
+      ],
+      "id": "parse-content",
+      "name": "Parse Generated Content"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "tableId": "ai_generated_content",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "content_id",
+              "fieldValue": "={{ $('Randomize Content Parameters').item.json.content_id }}"
+            },
+            {
+              "fieldId": "batch_id",
+              "fieldValue": "={{ $('Setup Batch Counter').item.json.batch_id }}"
+            },
+            {
+              "fieldId": "title",
+              "fieldValue": "={{ $json.title }}"
+            },
+            {
+              "fieldId": "content",
+              "fieldValue": "={{ $json.main_content }}"
+            },
+            {
+              "fieldId": "hook",
+              "fieldValue": "={{ $json.hook }}"
+            },
+            {
+              "fieldId": "cta",
+              "fieldValue": "={{ $json.cta }}"
+            },
+            {
+              "fieldId": "tags",
+              "fieldValue": "={{ JSON.stringify($json.tags) }}"
+            },
+            {
+              "fieldId": "category",
+              "fieldValue": "={{ $('Randomize Content Parameters').item.json.selected_category }}"
+            },
+            {
+              "fieldId": "content_type",
+              "fieldValue": "={{ $('Randomize Content Parameters').item.json.selected_type }}"
+            },
+            {
+              "fieldId": "word_count",
+              "fieldValue": "={{ $json.word_count }}"
+            },
+            {
+              "fieldId": "estimated_duration_seconds",
+              "fieldValue": "={{ $json.estimated_duration_seconds }}"
+            },
+            {
+              "fieldId": "status",
+              "fieldValue": "generated"
+            },
+            {
+              "fieldId": "created_at",
+              "fieldValue": "={{ $now.toISO() }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        300
+      ],
+      "id": "save-content",
+      "name": "Save Content to Supabase",
+      "credentials": {
+        "supabaseApi": {
+          "id": "your-supabase-credentials-id",
+          "name": "Supabase API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        300
+      ],
+      "id": "aggregate-results",
+      "name": "Aggregate Results"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "tableId": "ai_generated_content",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "batch_id",
+              "condition": "eq",
+              "keyValue": "={{ $('Setup Batch Counter').item.json.batch_id }}"
+            },
+            {
+              "keyName": "status",
+              "condition": "eq", 
+              "keyValue": "generating"
+            }
+          ]
+        },
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "status",
+              "fieldValue": "completed"
+            },
+            {
+              "fieldId": "completed_at",
+              "fieldValue": "={{ $now.toISO() }}"
+            },
+            {
+              "fieldId": "total_generated",
+              "fieldValue": "={{ $json.data.length }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        1800,
+        300
+      ],
+      "id": "update-batch-status",
+      "name": "Update Batch Status",
+      "credentials": {
+        "supabaseApi": {
+          "id": "your-supabase-credentials-id",
+          "name": "Supabase API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "summary",
+              "name": "summary",
+              "value": "={{ \n'✅ Content Generation Complete!\\n\\n' +\n'📊 Batch ID: ' + $('Setup Batch Counter').item.json.batch_id + '\\n' +\n'📝 Generated: ' + $('Aggregate Results').item.json.data.length + ' pieces of content\\n' +\n'🎯 Categories: ' + [...new Set($('Aggregate Results').item.json.data.map(item => item.category))].join(', ') + '\\n' +\n'⏱️ Total Duration: ~' + $('Aggregate Results').item.json.data.reduce((sum, item) => sum + (item.estimated_duration_seconds || 0), 0) + ' seconds\\n\\n' +\n'📋 Generated Content Titles:\\n' +\n$('Aggregate Results').item.json.data.map((item, index) => \n  (index + 1) + '. ' + item.title + ' (' + item.content_type + ')'\n).join('\\n')\n}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2000,
+        300
+      ],
+      "id": "create-summary",
+      "name": "Create Summary Report"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "debug_raw_content",
+              "name": "debug_raw_content",
+              "value": "={{ $json.content }}",
+              "type": "string"
+            },
+            {
+              "id": "debug_content_length",
+              "name": "debug_content_length",
+              "value": "={{ $json.content ? $json.content.length : 0 }}",
+              "type": "number"
+            },
+            {
+              "id": "debug_has_title",
+              "name": "debug_has_title",
+              "value": "={{ $json.content ? $json.content.includes('TITLE:') : false }}",
+              "type": "boolean"
+            },
+            {
+              "id": "debug_has_content",
+              "name": "debug_has_content",
+              "value": "={{ $json.content ? $json.content.includes('CONTENT:') : false }}",
+              "type": "boolean"
+            },
+            {
+              "id": "debug_has_tags",
+              "name": "debug_has_tags",
+              "value": "={{ $json.content ? $json.content.includes('TAGS:') : false }}",
+              "type": "boolean"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1100,
+        300
+      ],
+      "id": "debug-ai-output",
+      "name": "Debug AI Output"
+    },
+    {
+      "parameters": {
+        "content": "# AI Content Generator Configuration\n\n⚠️ **SETUP REQUIRED:**\n\n1. **Supabase Credentials**: Set up your Supabase API credentials\n2. **OpenAI API**: Configure your OpenAI API key\n3. **Database Table**: Create the 'ai_generated_content' table (see schema below)\n\n## Database Schema:\n```sql\nCREATE TABLE ai_generated_content (\n  id SERIAL PRIMARY KEY,\n  content_id VARCHAR UNIQUE,\n  batch_id VARCHAR,\n  title TEXT,\n  content TEXT,\n  hook TEXT,\n  cta TEXT,\n  tags JSONB,\n  category VARCHAR,\n  content_type VARCHAR,\n  word_count INTEGER,\n  estimated_duration_seconds INTEGER,\n  status VARCHAR DEFAULT 'generated',\n  created_at TIMESTAMP DEFAULT NOW(),\n  completed_at TIMESTAMP,\n  total_generated INTEGER\n);\n```",
+        "height": 600,
+        "width": 400,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -100,
+        100
+      ],
+      "id": "setup-note",
+      "name": "Setup Instructions"
+    },
+    {
+      "parameters": {
+        "content": "# Content Generation Process\n\n1. **Randomize Parameters**: Selects random category and content type\n2. **AI Generation**: Creates unique content using GPT-4o-mini\n3. **Parse Content**: Extracts title, content, tags, hook, and CTA\n4. **Save to Database**: Stores in Supabase with metadata\n5. **Batch Tracking**: Monitors generation progress",
+        "height": 400,
+        "width": 600,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        700,
+        100
+      ],
+      "id": "process-note",
+      "name": "Process Overview"
+    },
+    {
+      "parameters": {
+        "content": "# Output & Results\n\n📊 **Batch Summary**\n📝 **Generated Content Count** \n🎯 **Content Categories**\n⏱️ **Total Estimated Duration**\n📋 **Content Titles List**\n\nAll content is saved to Supabase for further processing or video generation workflows.",
+        "height": 400,
+        "width": 400,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        100
+      ],
+      "id": "output-note",
+      "name": "Output Information"
+    }
+  ],
+  "connections": {
+    "Start Workflow": {
+      "main": [
+        [
+          {
+            "node": "Configuration",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configuration": {
+      "main": [
+        [
+          {
+            "node": "Create Content Batch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Content Batch": {
+      "main": [
+        [
+          {
+            "node": "Setup Batch Counter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Setup Batch Counter": {
+      "main": [
+        [
+          {
+            "node": "Split Batch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Batch": {
+      "main": [
+        [
+          {
+            "node": "Randomize Content Parameters",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Randomize Content Parameters": {
+      "main": [
+        [
+          {
+            "node": "Generate AI Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate AI Content": {
+      "main": [
+        [
+          {
+            "node": "Debug AI Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Debug AI Output": {
+      "main": [
+        [
+          {
+            "node": "Parse Generated Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Generated Content": {
+      "main": [
+        [
+          {
+            "node": "Save Content to Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Content to Supabase": {
+      "main": [
+        [
+          {
+            "node": "Aggregate Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate Results": {
+      "main": [
+        [
+          {
+            "node": "Update Batch Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Batch Status": {
+      "main": [
+        [
+          {
+            "node": "Create Summary Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "instanceId": "new-workflow-instance"
+  }
+}
