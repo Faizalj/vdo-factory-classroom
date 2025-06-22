@@ -1,15 +1,14 @@
 {
-  "name": "Full Supabase Video Factory",
   "nodes": [
     {
       "parameters": {},
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        -340,
-        1220
+        560,
+        1580
       ],
-      "id": "2981fcd1-0816-4524-ae71-f753ec3ea0e4",
+      "id": "2fa1f32f-712e-4700-a0c7-1d353c4d33e2",
       "name": "Limit"
     },
     {
@@ -19,10 +18,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        -1000,
-        1880
+        -100,
+        2240
       ],
-      "id": "9057a663-50f1-48d6-9962-c961da8f7a41",
+      "id": "58949819-0f14-4b6c-aecf-a8258fbbcf48",
       "name": "Loop Over Items"
     },
     {
@@ -33,10 +32,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        940,
-        1880
+        1840,
+        2240
       ],
-      "id": "6bda2ca7-205b-400a-88a0-29882346cced",
+      "id": "19e0dbee-aef7-4ac0-9e02-4a6f8581d1b0",
       "name": "Get status of TTS generation",
       "retryOnFail": true
     },
@@ -125,10 +124,10 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        1100,
-        1880
+        2000,
+        2240
       ],
-      "id": "975260df-bba0-4649-81ac-11dc16f46117",
+      "id": "15c0289f-3c14-45b6-988a-08470b0fc723",
       "name": "TTS status switch"
     },
     {
@@ -148,10 +147,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1800,
-        1740
+        2700,
+        2100
       ],
-      "id": "019dd453-d8cc-4d48-8454-717691f56a16",
+      "id": "e2233536-f02c-4819-806b-3f6a57c89ab7",
       "name": "Start generating captioned TTS video"
     },
     {
@@ -162,10 +161,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2220,
-        1740
+        3120,
+        2100
       ],
-      "id": "91a5861d-cb1e-4f7b-8661-eb6c44af9567",
+      "id": "1fa22181-fedc-41f9-936a-15fbd2f3f39f",
       "name": "Get video generation status",
       "retryOnFail": true
     },
@@ -254,10 +253,10 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        2400,
-        1740
+        3300,
+        2100
       ],
-      "id": "33e38bc9-a4b0-42fd-a254-6a8f3307f257",
+      "id": "cee36354-542c-40d3-bb4a-744ac7eb333d",
       "name": "Video generation switch"
     },
     {
@@ -289,10 +288,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2660,
-        1940
+        3560,
+        2300
       ],
-      "id": "a2848e6f-66a5-4712-827e-ee591152f790",
+      "id": "4804b409-375a-4f5d-9d45-3f4d92cfcd97",
       "name": "Setup media fields"
     },
     {
@@ -303,10 +302,10 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        -960,
-        2560
+        -60,
+        2920
       ],
-      "id": "ba49f973-ca3d-4288-b487-e34e7a5ed7df",
+      "id": "191047d0-0b2a-483a-8baa-1c005bf683f8",
       "name": "Combine loop items"
     },
     {
@@ -340,10 +339,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -760,
-        2560
+        140,
+        2920
       ],
-      "id": "eb01f97e-da41-4ee8-804f-575674f1e115",
+      "id": "80bafaab-2495-4aa6-a4d0-ebd33dd71c40",
       "name": "Start merging the videos"
     },
     {
@@ -354,10 +353,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -340,
-        2560
+        560,
+        2920
       ],
-      "id": "a99a4730-d8f8-4302-bdec-66a0aac10a74",
+      "id": "729d3414-e8d2-4ff0-80e2-137371be2150",
       "name": "Get status of the video merge"
     },
     {
@@ -445,10 +444,10 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        -160,
-        2560
+        740,
+        2920
       ],
-      "id": "59dab5b6-a9a3-42df-8921-d662cb8a6aff",
+      "id": "0f851274-8e6d-4e30-8038-40b9985843fd",
       "name": "Video merge status switch"
     },
     {
@@ -468,10 +467,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        660,
-        3420
+        1560,
+        3780
       ],
-      "id": "828a4159-fcad-45c8-9287-a67cdfd3ba0c",
+      "id": "64f747c9-bf57-43ab-8d4b-c53e2a0d3648",
       "name": "Setup final video download URL"
     },
     {
@@ -481,10 +480,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        760,
-        1880
+        1660,
+        2240
       ],
-      "id": "358ff748-aac8-4587-b598-a72341cb7456",
+      "id": "3fb64d88-eb61-49f4-b861-634f83523d5b",
       "name": "Wait until the TTS gets generated",
       "webhookId": "83468f41-991c-46ac-bd23-c092b5fa2009"
     },
@@ -523,10 +522,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        580,
-        1880
+        1480,
+        2240
       ],
-      "id": "63d0afb6-9f33-4264-a01f-f6de6c1dfd92",
+      "id": "ca214b37-19d3-4c22-bdbb-7d7e060d8bfc",
       "name": "Start generating TTS (chatterbox)"
     },
     {
@@ -536,10 +535,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        2000,
-        1740
+        2900,
+        2100
       ],
-      "id": "4f140d8f-01a8-4a26-b236-39ca618b5406",
+      "id": "8306ccc3-2d3a-435c-8f77-e76e3e0c0740",
       "name": "Wait until the video gets generated",
       "webhookId": "f5d2f68d-7349-467f-91ba-a764081269eb"
     },
@@ -550,10 +549,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        -540,
-        2560
+        360,
+        2920
       ],
-      "id": "17c771be-789b-45c0-8cf4-dbbfa717d27d",
+      "id": "00118aa4-66f3-4ea2-a41c-26b12783b4cd",
       "name": "Wait until the videos gets merged together",
       "webhookId": "b7d7d8f6-b8f7-4b05-b943-ae3f202063a5"
     },
@@ -617,10 +616,10 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        360,
-        1760
+        1260,
+        2120
       ],
-      "id": "5e4e2e43-4f37-41b2-bc56-0e6af4e882f0",
+      "id": "6c231975-b36f-460a-8210-8b59d535c0b7",
       "name": "TTS switch"
     },
     {
@@ -640,10 +639,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1360,
-        1860
+        2260,
+        2220
       ],
-      "id": "aef38e1b-1579-4a5b-918f-27e1480324da",
+      "id": "fe5ab43e-d4ca-4af8-a913-6d6eab2ec9c5",
       "name": "Setup TTS file_id"
     },
     {
@@ -663,10 +662,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        520,
-        1100
+        1420,
+        1460
       ],
-      "id": "b8dc8155-c3b7-4c06-98ac-18dd85240426",
+      "id": "08fdddce-8c71-4c3d-bfc2-6e283e43093a",
       "name": "Cleanup text"
     },
     {
@@ -682,10 +681,10 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        340,
-        1280
+        1240,
+        1640
       ],
-      "id": "1c76fc05-0d8c-4890-adca-9b11dbad6512",
+      "id": "fc30812c-0adf-4ecc-8697-b8ce5579b0b1",
       "name": "OpenAI Chat Model",
       "credentials": {
         "openAiApi": {
@@ -711,10 +710,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1620,
-        1740
+        2520,
+        2100
       ],
-      "id": "7783d4a0-54cc-4059-8ac8-3840121fe088",
+      "id": "8e41bd57-54f9-471c-84ef-f588450e163e",
       "name": "Global TTS audio id"
     },
     {
@@ -726,10 +725,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -880,
-        1000
+        20,
+        1360
       ],
-      "id": "9a0c37f8-1647-4ea3-bc79-00fadc4c9a93",
+      "id": "973f76b8-6886-482b-aeeb-ce33a49d3ad0",
       "name": "Sticky Note4"
     },
     {
@@ -741,10 +740,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        160,
-        1000
+        1060,
+        1360
       ],
-      "id": "5781af97-8ddf-4b53-bb54-478a25fd346d",
+      "id": "bf341a85-fcf3-47e9-9420-2fcc6bb53434",
       "name": "Sticky Note5"
     },
     {
@@ -756,10 +755,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -1060,
-        2440
+        -160,
+        2800
       ],
-      "id": "b6b2b2ad-06cf-47af-8050-47d398d6fa53",
+      "id": "87dd4b0a-5932-4cff-aae9-56a79af40bb0",
       "name": "Sticky Note6"
     },
     {
@@ -771,10 +770,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        320,
-        1600
+        1220,
+        1960
       ],
-      "id": "c5ada0bb-76cb-4d0a-8957-3c6ecc5a42cf",
+      "id": "8b07d6c3-b1ce-4e5b-8f0c-4333f009684c",
       "name": "Sticky Note8"
     },
     {
@@ -786,10 +785,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1560,
-        1600
+        2460,
+        1960
       ],
-      "id": "34e609ea-17d6-485e-96e6-9fcc2b5bbc91",
+      "id": "955ac760-aca0-4183-8f0e-a39c05196cfa",
       "name": "Sticky Note9"
     },
     {
@@ -801,10 +800,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        180,
-        2440
+        1080,
+        2800
       ],
-      "id": "bb4f52c6-f51b-4341-8e8c-30994f0ad0bf",
+      "id": "7f7b2f1e-78f2-490e-bf74-cbc9c00a6c7a",
       "name": "Sticky Note11"
     },
     {
@@ -815,10 +814,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1060,
-        3420
+        1960,
+        3780
       ],
-      "id": "91b3bfe8-eea4-4304-b9fe-6735d31014ab",
+      "id": "23cf8765-d0bf-4842-979c-d4bf01aaf927",
       "name": "Download the video"
     },
     {
@@ -831,10 +830,10 @@
       "type": "@n8n/n8n-nodes-langchain.informationExtractor",
       "typeVersion": 1.1,
       "position": [
-        680,
-        1100
+        1580,
+        1460
       ],
-      "id": "a7038544-e2ba-4639-aba1-1ba85b936e9c",
+      "id": "a39da281-f21d-4105-81e0-67e35828a2a0",
       "name": "Create the script"
     },
     {
@@ -846,10 +845,10 @@
       "type": "@n8n/n8n-nodes-langchain.chainLlm",
       "typeVersion": 1.7,
       "position": [
-        220,
-        1100
+        1120,
+        1460
       ],
-      "id": "55c46007-6829-4bd4-a5be-1ab9084e18ad",
+      "id": "c84f0f75-2011-4cc6-abbe-a95a65db1d3e",
       "name": "Create the motivational speech"
     },
     {
@@ -860,10 +859,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        840,
-        1260
+        1740,
+        1620
       ],
-      "id": "ac961f32-8add-4a9f-ac14-04c9786f904d",
+      "id": "c0127cbc-1efd-4176-9a4a-fdcffa517afa",
       "name": "Split Out"
     },
     {
@@ -876,10 +875,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        600,
-        3300
+        1500,
+        3660
       ],
-      "id": "8f83c25c-f238-4341-981f-a4f309567ac0",
+      "id": "463db480-c14e-4993-a568-ae7901379793",
       "name": "Sticky Note13"
     },
     {
@@ -913,13 +912,13 @@
           }
         }
       },
-      "id": "ca39000d-4c5f-478c-ae09-e965fdcc3b1e",
+      "id": "dbd12f5c-4bc0-44c8-a5dc-a5ba36bd8816",
       "name": "Start Youtube upload",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        860,
-        3420
+        1760,
+        3780
       ],
       "disabled": true
     },
@@ -943,13 +942,13 @@
         "inputDataFieldName": "data",
         "options": {}
       },
-      "id": "c0ba9680-5f40-463a-9290-f4a8c4d7594c",
+      "id": "5dc66af4-6d5a-4360-b1f5-47be0d03c0ff",
       "name": "Upload video to YouTube",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        1260,
-        3420
+        2160,
+        3780
       ],
       "disabled": true
     },
@@ -1060,10 +1059,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -660,
-        540
+        240,
+        900
       ],
-      "id": "340610bb-a7bd-468b-a3e9-b6b1177dc9bd",
+      "id": "cf2c6fdd-f7f4-4df3-8bee-4e052ab07493",
       "name": "Configure me"
     },
     {
@@ -1076,10 +1075,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -760,
-        320
+        140,
+        680
       ],
-      "id": "381222ea-6194-4fd8-aa2f-f2848e396f9e",
+      "id": "dfd533d3-80d6-407d-bf8b-98af4a0c709c",
       "name": "Sticky Note12"
     },
     {
@@ -1109,10 +1108,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -220,
-        1220
+        680,
+        1580
       ],
-      "id": "c6998174-2fc1-481f-8514-ca91c3b8b0ec",
+      "id": "5de57f0a-49a1-486f-b22c-a7944ec2b23f",
       "name": "If"
     },
     {
@@ -1122,10 +1121,10 @@
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        -40,
-        1060
+        860,
+        1420
       ],
-      "id": "2d7188a3-bb57-4875-b90c-74ac58f1abf6",
+      "id": "5ce5300f-856c-4d1e-9903-e37613e0d9b6",
       "name": "No more stories"
     },
     {
@@ -1136,10 +1135,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -300,
-        420
+        600,
+        780
       ],
-      "id": "199b96dc-a060-49da-97d8-88751c7c0fef",
+      "id": "ccd8c405-0d6f-4c38-8c5c-30bd58447277",
       "name": "HTTP Request",
       "onError": "continueErrorOutput"
     },
@@ -1150,10 +1149,10 @@
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        -300,
-        680
+        600,
+        1040
       ],
-      "id": "6955a1b4-6399-4ec8-9576-ed24a384aabc",
+      "id": "3bf9407e-5ab6-4b26-8e07-a4abc11815ce",
       "name": "Server isn't ready"
     },
     {
@@ -1165,10 +1164,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -420,
-        320
+        480,
+        680
       ],
-      "id": "d3a39eb1-057d-4e21-a234-0b28f5f2ceb3",
+      "id": "121c5e1c-7495-4059-b2b2-11917d2fc3b5",
       "name": "Sticky Note15"
     },
     {
@@ -1180,10 +1179,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1540,
-        3080
+        2440,
+        3440
       ],
-      "id": "6c17e842-b965-45ff-b613-e637a88a9ea6",
+      "id": "3072aede-24c5-4fdf-a4c9-544fc44abdcf",
       "name": "Sticky Note"
     },
     {
@@ -1203,10 +1202,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1580,
-        3200
+        2480,
+        3560
       ],
-      "id": "40aeaeb5-8991-4007-9e6c-c63e845a8e6c",
+      "id": "496a5348-1554-464b-8ee4-ccd734394a36",
       "name": "Set file ids to delete"
     },
     {
@@ -1218,10 +1217,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1900,
-        3200
+        2800,
+        3560
       ],
-      "id": "f88e83d5-fd97-4fa1-be40-43837742fbef",
+      "id": "e9e8c425-cbac-4224-8314-98fc695fc50d",
       "name": "Delete tmp files"
     },
     {
@@ -1232,10 +1231,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        1740,
-        3200
+        2640,
+        3560
       ],
-      "id": "4f095720-c67c-405b-beeb-491a9a644801",
+      "id": "b2dd1e09-a3d4-41fb-b8d5-0f8110340fbc",
       "name": "For each file"
     },
     {
@@ -1249,18 +1248,12 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        -460,
-        1220
+        440,
+        1580
       ],
-      "id": "0b4efff8-b15d-44fd-9f47-ebec27750739",
+      "id": "99087fc3-d261-42cb-8274-a00072c76880",
       "name": "Get row for processing",
-      "alwaysOutputData": true,
-      "credentials": {
-        "supabaseApi": {
-          "id": "your-supabase-credentials-id",
-          "name": "Supabase API"
-        }
-      }
+      "alwaysOutputData": true
     },
     {
       "parameters": {
@@ -1280,6 +1273,10 @@
             {
               "fieldId": "video_id",
               "fieldValue": "={{ $('Start merging the videos').item.json.file_id }}"
+            },
+            {
+              "fieldId": "status",
+              "fieldValue": "generated"
             }
           ]
         }
@@ -1287,15 +1284,15 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        320,
-        2620
+        1220,
+        2980
       ],
-      "id": "cd55280d-9aeb-4d89-a225-fd4d77382bbd",
+      "id": "b4ee1a94-3f89-423d-8924-d72e6b58ea2a",
       "name": "Save video id to the db",
       "credentials": {
         "supabaseApi": {
-          "id": "your-supabase-credentials-id",
-          "name": "Supabase API"
+          "id": "yTGA7D95MEtsyEAb",
+          "name": "Supabase account 2"
         }
       }
     },
@@ -1309,10 +1306,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        600,
-        2440
+        1500,
+        2800
       ],
-      "id": "18f2b8d6-465e-4721-9d68-3b6dd70b63e4",
+      "id": "1fd6c09a-87a5-4d29-a265-d4e407b53a90",
       "name": "Sticky Note20"
     },
     {
@@ -1323,10 +1320,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        700,
-        2560
+        1600,
+        2920
       ],
-      "id": "9c6160d6-fb39-4437-a541-8f24bd1a16d2",
+      "id": "e86c4a0f-cc98-4ff8-ba69-7236cb4e44e2",
       "name": "Download the video for Postiz"
     },
     {
@@ -1351,17 +1348,11 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        920,
-        2560
+        1820,
+        2920
       ],
-      "id": "058243e1-37e3-49a0-9d45-c568e351e95a",
-      "name": "Upload video to Postiz",
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "your-postiz-api-key",
-          "name": "Postiz API Key"
-        }
-      }
+      "id": "81320f9b-0d7f-4559-b9e4-9b1698ee8b39",
+      "name": "Upload video to Postiz"
     },
     {
       "parameters": {
@@ -1373,17 +1364,11 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1140,
-        2560
+        2040,
+        2920
       ],
-      "id": "989f99d1-43e4-44a7-8782-ebcebb9e321c",
-      "name": "Get Postiz integrations",
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "your-postiz-api-key",
-          "name": "Postiz API Key"
-        }
-      }
+      "id": "0a3cef4f-fc2c-44f7-9477-8d349a335a2a",
+      "name": "Get Postiz integrations"
     },
     {
       "parameters": {
@@ -1393,10 +1378,10 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        1320,
-        2560
+        2220,
+        2920
       ],
-      "id": "3c1aa552-2fc7-4e3c-afd7-03e1f8aeafe9",
+      "id": "6ef6b2c2-c8dc-490f-8270-ca51f0de9c8e",
       "name": "Merge integrations"
     },
     {
@@ -1416,10 +1401,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        680,
-        3040
+        1580,
+        3400
       ],
-      "id": "5f940ecf-9aed-4d0b-98ea-159eba6e50ea",
+      "id": "825df739-bbb4-4f93-84c5-3d3aab616696",
       "name": "Set integration id for YouTube"
     },
     {
@@ -1436,17 +1421,11 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1220,
-        3040
+        2120,
+        3400
       ],
-      "id": "c7a34d5a-77d6-486c-b286-8b31f7b3fe7c",
-      "name": "Schedule YouTube video",
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "your-postiz-api-key",
-          "name": "Postiz API Key"
-        }
-      }
+      "id": "7e22442d-3c4f-42a5-be80-a9931ece4635",
+      "name": "Schedule YouTube video"
     },
     {
       "parameters": {
@@ -1457,10 +1436,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        640,
-        2740
+        1540,
+        3100
       ],
-      "id": "e8bb2030-b86f-4e4d-90fe-31cd52674a44",
+      "id": "b870d5b9-50ea-4649-b6b3-65cd40ca3a2f",
       "name": "Sticky Note1"
     },
     {
@@ -1468,10 +1447,10 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -1020,
-        360
+        -120,
+        720
       ],
-      "id": "f4ae14e0-7178-4cfb-bdf6-8acfa3770c75",
+      "id": "0b7c5125-f645-43a1-87ea-e6c622c911a5",
       "name": "When clicking 'Execute workflow'"
     },
     {
@@ -1506,18 +1485,12 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -620,
-        1780
+        280,
+        2140
       ],
-      "id": "ce6317e6-0088-4f2e-94a5-0e469e06d859",
+      "id": "e64007d5-892c-4586-8c2e-0f2f6530f440",
       "name": "Generate AI image",
       "alwaysOutputData": false,
-      "credentials": {
-        "httpBearerAuth": {
-          "id": "your-together-ai-credentials",
-          "name": "Together AI API"
-        }
-      },
       "onError": "continueErrorOutput"
     },
     {
@@ -1545,10 +1518,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -300,
-        1660
+        600,
+        2020
       ],
-      "id": "354c6e44-eefd-4b2d-ba0d-4dc5b95986cd",
+      "id": "821bafb1-17ad-4445-9fd5-d506a5c2236f",
       "name": "Upload image to server",
       "retryOnFail": true
     },
@@ -1559,10 +1532,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        -300,
-        1900
+        600,
+        2260
       ],
-      "id": "a0ed3ad7-3395-4d64-bcf9-fac4b97c8c2e",
+      "id": "20f4561f-b4af-4eb4-90b7-4cec6d6c739d",
       "name": "Wait for the error / rate limit to go away",
       "webhookId": "18721630-ff12-4eb6-8a9a-c0d229d2b66d"
     },
@@ -1575,10 +1548,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -740,
-        1580
+        160,
+        1940
       ],
-      "id": "77d6b62a-6533-4ef4-85fe-fd11e9270dfc",
+      "id": "91824846-9542-49ae-ab9a-9844f9a08e9d",
       "name": "Sticky Note2"
     },
     {
@@ -1589,10 +1562,10 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        -620,
-        1220
+        280,
+        1580
       ],
-      "id": "1cc1abb7-3824-4c42-8e7f-2f24c4c2560a",
+      "id": "3e5d0414-c8eb-4463-b862-0ab4f189fcfb",
       "name": "Aggregate1"
     },
     {
@@ -1606,34 +1579,12 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        -780,
-        1220
+        120,
+        1580
       ],
-      "id": "85ddcb1e-44e7-4994-be94-06116ac69cc0",
+      "id": "29d09c0f-e431-4aed-8b96-6c92971fd1b6",
       "name": "Check if data exists1",
-      "alwaysOutputData": true,
-      "credentials": {
-        "supabaseApi": {
-          "id": "your-supabase-credentials-id",
-          "name": "Supabase API"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "content": "",
-        "height": 80,
-        "width": 2800,
-        "color": 7
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -1360,
-        120
-      ],
-      "id": "4c8adc5f-3413-44f2-bf98-7738595edc9e",
-      "name": "Sticky Note3"
+      "alwaysOutputData": true
     },
     {
       "parameters": {
@@ -1646,408 +1597,19 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -1020,
-        600
+        -120,
+        960
       ],
-      "id": "2095c4d4-51a5-47ea-813d-cda5cdae54aa",
+      "id": "eebcdfb6-ec6a-4d16-9877-d7647ca48a40",
       "name": "Schedule Trigger"
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "channel_name",
-              "name": "channel_name",
-              "value": "Motivation Hub",
-              "type": "string"
-            },
-            {
-              "id": "supabase_table",
-              "name": "supabase_table",
-              "value": "motivation_hub",
-              "type": "string"
-            },
-            {
-              "id": "content_categories",
-              "name": "content_categories",
-              "value": [
-                "daily motivation and inspiration",
-                "personal development",
-                "goal setting and achievement",
-                "overcoming challenges",
-                "success stories and lessons",
-                "mindset transformation",
-                "self-confidence building",
-                "productivity and focus",
-                "resilience and perseverance",
-                "positive thinking"
-              ],
-              "type": "array"
-            },
-            {
-              "id": "content_types",
-              "name": "content_types",
-              "value": [
-                "motivational speech",
-                "inspirational story",
-                "success tip",
-                "mindset shift",
-                "life lesson",
-                "daily reminder",
-                "actionable advice"
-              ],
-              "type": "array"
-            },
-            {
-              "id": "target_audience",
-              "name": "target_audience",
-              "value": "Young professionals, students, and anyone seeking motivation and personal growth",
-              "type": "string"
-            },
-            {
-              "id": "content_language",
-              "name": "content_language",
-              "value": "English",
-              "type": "string"
-            },
-            {
-              "id": "content_style",
-              "name": "content_style",
-              "value": "uplifting, empowering, practical, and action-oriented",
-              "type": "string"
-            },
-            {
-              "id": "content_length",
-              "name": "content_length",
-              "value": "60-90 seconds when spoken",
-              "type": "string"
-            },
-            {
-              "id": "batch_size",
-              "name": "batch_size",
-              "value": 5,
-              "type": "number"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        -1000,
-        -200
-      ],
-      "id": "afd4d74a-f3a3-430a-b4e6-b95c53b270fd",
-      "name": "Channel Configuration"
-    },
-    {
-      "parameters": {
-        "modelId": {
-          "__rl": true,
-          "value": "gpt-4.1-nano",
-          "mode": "list",
-          "cachedResultName": "GPT-4.1-NANO"
-        },
-        "messages": {
-          "values": [
-            {
-              "content": "You are an expert content creator specializing in engaging YouTube content. You understand both Thai and international audiences and can create content that resonates with specific target demographics.",
-              "role": "system"
-            },
-            {
-              "content": "={{ 'Create ' + $('Channel Configuration').item.json.batch_size + ' different compelling YouTube video content pieces for the channel: ' + $('Channel Configuration').item.json.channel_name + '\\n\\n' + 'Channel Focus: ' + $('Channel Configuration').item.json.content_categories.join(', ') + '\\n' + 'Content Types: ' + $('Channel Configuration').item.json.content_types.join(', ') + '\\n' + 'Target Audience: ' + $('Channel Configuration').item.json.target_audience + '\\n' + 'Content Style: ' + $('Channel Configuration').item.json.content_style + '\\n' + 'Video Length: ' + $('Channel Configuration').item.json.content_length + '\\n\\n' + 'Requirements:\\n' + '- Create ' + $('Channel Configuration').item.json.batch_size + ' unique video concepts\\n' + '- Each should have strong YouTube appeal (clickable titles)\\n' + '- Content should be practical and engaging\\n' + '- Consider trending topics in tech/digital space\\n' + '- Make titles SEO-friendly for YouTube search\\n' + '- Include clear value proposition in each video\\n\\n' + 'Format your response exactly as:\\n\\n' + 'VIDEO_1:\\n' + 'TITLE: [Compelling YouTube video title with strong hook]\\n' + 'CONTENT: [Complete video script with clear structure: intro hook, main content, conclusion]\\n\\n' + 'VIDEO_2:\\n' + 'TITLE: [Next video title]\\n' + 'CONTENT: [Next video script]\\n\\n' + 'Continue for all ' + $('Channel Configuration').item.json.batch_size + ' videos' }}"
-            }
-          ]
-        },
-        "options": {
-          "temperature": 0.7
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.openAi",
-      "typeVersion": 1.8,
-      "position": [
-        -900,
-        -360
-      ],
-      "id": "6db8c865-4f69-4cd1-8b91-46a491339509",
-      "name": "Generate Video Content",
-      "credentials": {
-        "openAiApi": {
-          "id": "your-openai-credentials-id",
-          "name": "OpenAI API"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "jsCode": "// ทำความสะอาด content ก่อน\nconst rawContent = $input.first().json.message.content;\nconst cleanedContent = rawContent\n  .replace(/\\*/g, '')    // ลบเฉพาะ * ตัวเดียว\n  .trim();               // ตัด space หน้า-หลัง\n\n// ดึงข้อมูล channel จาก config\nconst channelConfig = $('Channel Configuration').item.json;\n\n// Split เป็นแต่ละวิดีโอ\nconst videoPieces = cleanedContent.split(/VIDEO_\\d+:/i);\nconst results = [];\n\nvideoPieces.forEach((piece, index) => {\n  if (piece.trim() && index > 0) { // skip first empty piece\n    // Parse แต่ละวิดีโอ\n    const titleMatch = piece.match(/TITLE:\\s*([^\\n]*)/i);\n    const contentMatch = piece.match(/CONTENT:\\s*([\\s\\S]*?)(?=VIDEO_|$)/i);\n    \n    const title = titleMatch ? titleMatch[1].trim() : `Video Content ${index}`;\n    const content = contentMatch ? contentMatch[1].trim().replace(/\\\\n/g, '\\n') : '';\n    \n    // คำนวณ word count (ประมาณ)\n    const wordCount = content.split(' ').filter(word => word.length > 0).length;\n    \n    results.push({\n      title: title,\n      content: content,\n      status: 'draft',\n      channel_id: channelConfig.channel_id,\n      channel_name: channelConfig.channel_name,\n      word_count: wordCount,\n      estimated_duration_seconds: Math.round(wordCount * 0.5), // Thai content speaks slower\n      created_at: new Date().toISOString()\n    });\n  }\n});\n\n// Return array of items\nreturn results.map(item => ({ json: item }));"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        -600,
-        -100
-      ],
-      "id": "0fc34644-0dad-4fac-a088-3eb42a962b92",
-      "name": "Parse Video Content"
-    },
-    {
-      "parameters": {
-        "tableId": "={{ $('Channel Configuration').item.json.supabase_table }}",
-        "fieldsUi": {
-          "fieldValues": [
-            {
-              "fieldId": "title",
-              "fieldValue": "={{ $json.title }}"
-            },
-            {
-              "fieldId": "content",
-              "fieldValue": "={{ $json.content }}"
-            },
-            {
-              "fieldId": "status",
-              "fieldValue": "={{ $json.status }}"
-            },
-            {
-              "fieldId": "word_count",
-              "fieldValue": "={{ $json.word_count }}"
-            },
-            {
-              "fieldId": "estimated_duration_seconds",
-              "fieldValue": "={{ $json.estimated_duration_seconds }}"
-            },
-            {
-              "fieldId": "created_at",
-              "fieldValue": "={{ $json.created_at }}"
-            }
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.supabase",
-      "typeVersion": 1,
-      "position": [
-        -400,
-        -200
-      ],
-      "id": "05c25d29-cb71-4dcc-87e6-c6707cc997a7",
-      "name": "Save to Channel Table",
-      "credentials": {
-        "supabaseApi": {
-          "id": "your-supabase-credentials-id",
-          "name": "Supabase API"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "aggregate": "aggregateAllItemData",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.aggregate",
-      "typeVersion": 1,
-      "position": [
-        -200,
-        -200
-      ],
-      "id": "5561f525-6f91-4c30-ac90-754f1aee33ec",
-      "name": "Aggregate Results"
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "summary",
-              "name": "summary",
-              "value": "={{ '🎬 Video Content Generation Complete!\\n\\n' + '📺 Channel: ' + $('Channel Configuration').item.json.channel_name + '\\n' + '📊 Table: ' + $('Channel Configuration').item.json.supabase_table + '\\n' + '🌐 Language: ' + $('Channel Configuration').item.json.content_language + '\\n' + '📝 Generated: ' + $('Aggregate Results').item.json.data.length + ' video scripts\\n' + '⏱️ Total Duration: ~' + Math.round($('Aggregate Results').item.json.data.reduce((sum, item) => sum + (item.estimated_duration_seconds || 0), 0) / 60) + ' minutes of content\\n\\n' + '📋 Generated Video Titles:\\n' + $('Aggregate Results').item.json.data.map((item, index) => (index + 1) + '. ' + item.title).join('\\n') + '\\n\\n' + '✅ All content saved with status: draft\\n' + '🔄 Ready for video generation workflow!' }}",
-              "type": "string"
-            },
-            {
-              "id": "total_videos",
-              "name": "total_videos",
-              "value": "={{ $('Aggregate Results').item.json.data.length }}",
-              "type": "number"
-            },
-            {
-              "id": "channel_info",
-              "name": "channel_info",
-              "value": "={{ { channel_name: $('Channel Configuration').item.json.channel_name, table_name: $('Channel Configuration').item.json.supabase_table, language: $('Channel Configuration').item.json.content_language } }}",
-              "type": "object"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        0,
-        -200
-      ],
-      "id": "960b2b69-25ab-41dd-87e8-1037b4e9b82e",
-      "name": "Create Channel Report"
     }
   ],
-  "pinData": {},
   "connections": {
-    "When clicking 'Execute workflow'": {
-      "main": [
-        [
-          {
-            "node": "Configure me",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Configure me": {
-      "main": [
-        [
-          {
-            "node": "HTTP Request",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "HTTP Request": {
-      "main": [
-        [
-          {
-            "node": "Check if data exists1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Server isn't ready",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Check if data exists1": {
-      "main": [
-        [
-          {
-            "node": "Aggregate1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Aggregate1": {
-      "main": [
-        [
-          {
-            "node": "Get row for processing",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get row for processing": {
-      "main": [
-        [
-          {
-            "node": "Limit",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Limit": {
       "main": [
         [
           {
             "node": "If",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "If": {
-      "main": [
-        [
-          {
-            "node": "No more stories",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Create the motivational speech",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create the motivational speech": {
-      "main": [
-        [
-          {
-            "node": "Cleanup text",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Cleanup text": {
-      "main": [
-        [
-          {
-            "node": "Create the script",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "OpenAI Chat Model": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "Create the motivational speech",
-            "type": "ai_languageModel",
-            "index": 0
-          },
-          {
-            "node": "Create the script",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create the script": {
-      "main": [
-        [
-          {
-            "node": "Split Out",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Split Out": {
-      "main": [
-        [
-          {
-            "node": "Loop Over Items",
             "type": "main",
             "index": 0
           }
@@ -2066,86 +1628,6 @@
         [
           {
             "node": "Generate AI image",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Generate AI image": {
-      "main": [
-        [
-          {
-            "node": "Upload image to server",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Wait for the error / rate limit to go away",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Upload image to server": {
-      "main": [
-        [
-          {
-            "node": "TTS switch",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Wait for the error / rate limit to go away": {
-      "main": [
-        [
-          {
-            "node": "Generate AI image",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "TTS switch": {
-      "main": [
-        [
-          {
-            "node": "Global TTS audio id",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Start generating TTS (chatterbox)",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Start generating TTS (chatterbox)": {
-      "main": [
-        [
-          {
-            "node": "Wait until the TTS gets generated",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Wait until the TTS gets generated": {
-      "main": [
-        [
-          {
-            "node": "Get status of TTS generation",
             "type": "main",
             "index": 0
           }
@@ -2188,44 +1670,11 @@
         ]
       ]
     },
-    "Setup TTS file_id": {
-      "main": [
-        [
-          {
-            "node": "Global TTS audio id",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Global TTS audio id": {
-      "main": [
-        [
-          {
-            "node": "Start generating captioned TTS video",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Start generating captioned TTS video": {
       "main": [
         [
           {
             "node": "Wait until the video gets generated",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Wait until the video gets generated": {
-      "main": [
-        [
-          {
-            "node": "Get video generation status",
             "type": "main",
             "index": 0
           }
@@ -2294,17 +1743,6 @@
         ]
       ]
     },
-    "Wait until the videos gets merged together": {
-      "main": [
-        [
-          {
-            "node": "Get status of the video merge",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Get status of the video merge": {
       "main": [
         [
@@ -2334,22 +1772,268 @@
         ]
       ]
     },
-    "Save video id to the db": {
+    "Setup final video download URL": {
       "main": [
         [
           {
-            "node": "Setup final video download URL",
+            "node": "Download the video for Postiz",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Setup final video download URL": {
+    "Wait until the TTS gets generated": {
       "main": [
         [
           {
-            "node": "Download the video for Postiz",
+            "node": "Get status of TTS generation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start generating TTS (chatterbox)": {
+      "main": [
+        [
+          {
+            "node": "Wait until the TTS gets generated",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait until the video gets generated": {
+      "main": [
+        [
+          {
+            "node": "Get video generation status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait until the videos gets merged together": {
+      "main": [
+        [
+          {
+            "node": "Get status of the video merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "TTS switch": {
+      "main": [
+        [
+          {
+            "node": "Global TTS audio id",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Start generating TTS (chatterbox)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Setup TTS file_id": {
+      "main": [
+        [
+          {
+            "node": "Global TTS audio id",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cleanup text": {
+      "main": [
+        [
+          {
+            "node": "Create the script",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Create the motivational speech",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Create the script",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Global TTS audio id": {
+      "main": [
+        [
+          {
+            "node": "Start generating captioned TTS video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download the video": {
+      "main": [
+        [
+          {
+            "node": "Upload video to YouTube",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create the script": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create the motivational speech": {
+      "main": [
+        [
+          {
+            "node": "Cleanup text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload video to YouTube": {
+      "main": [
+        [
+          {
+            "node": "Set file ids to delete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configure me": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "No more stories",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create the motivational speech",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Check if data exists1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Server isn't ready",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set file ids to delete": {
+      "main": [
+        [
+          {
+            "node": "For each file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "For each file": {
+      "main": [
+        [
+          {
+            "node": "Delete tmp files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row for processing": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save video id to the db": {
+      "main": [
+        [
+          {
+            "node": "Setup final video download URL",
             "type": "main",
             "index": 0
           }
@@ -2422,99 +2106,73 @@
         ]
       ]
     },
-    "Download the video": {
+    "When clicking 'Execute workflow'": {
       "main": [
         [
           {
-            "node": "Upload video to YouTube",
+            "node": "Configure me",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Upload video to YouTube": {
+    "Generate AI image": {
       "main": [
         [
           {
-            "node": "Set file ids to delete",
+            "node": "Upload image to server",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait for the error / rate limit to go away",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Set file ids to delete": {
+    "Upload image to server": {
       "main": [
         [
           {
-            "node": "For each file",
+            "node": "TTS switch",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "For each file": {
+    "Wait for the error / rate limit to go away": {
       "main": [
         [
           {
-            "node": "Delete tmp files",
+            "node": "Generate AI image",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Channel Configuration": {
+    "Aggregate1": {
       "main": [
         [
           {
-            "node": "Generate Video Content",
+            "node": "Get row for processing",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Generate Video Content": {
+    "Check if data exists1": {
       "main": [
         [
           {
-            "node": "Parse Video Content",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Parse Video Content": {
-      "main": [
-        [
-          {
-            "node": "Save to Channel Table",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Save to Channel Table": {
-      "main": [
-        [
-          {
-            "node": "Aggregate Results",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Aggregate Results": {
-      "main": [
-        [
-          {
-            "node": "Create Channel Report",
+            "node": "Aggregate1",
             "type": "main",
             "index": 0
           }
@@ -2522,12 +2180,8 @@
       ]
     }
   },
-  "active": false,
-  "settings": {
-    "executionOrder": "v1"
-  },
+  "pinData": {},
   "meta": {
-    "instanceId": "339979314200287f32affa09285453b9225a94604e8acfa3770c75",
-    "templateCredsSetupCompleted": false
+    "instanceId": "339979314200287f32affa09285453b9225a94604e8beacf6d02da846d7818bd"
   }
 }
