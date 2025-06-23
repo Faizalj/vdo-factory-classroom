@@ -122,6 +122,59 @@ CREATE INDEX idx_video_id_null ON reddit_motivational_videos(video_id)
 WHERE video_id IS NULL;
 ```
 
+### 📝 วิธีการสร้าง Table สำหรับช่องของคุณ
+
+เพื่อให้ workflow ทำงานได้กับช่องของคุณ ให้สร้าง table โดยแทนที่ `[YOUR_CHANNEL_NAME]` ด้วยชื่อช่องจริง:
+
+```sql
+-- เปลี่ยน [YOUR_CHANNEL_NAME] เป็นชื่อช่องจริง เช่น motivation_hub, tech_tips, etc.
+CREATE TABLE [YOUR_CHANNEL_NAME] (
+  id SERIAL PRIMARY KEY,
+  title TEXT NOT NULL,
+  content TEXT NOT NULL,
+  status TEXT DEFAULT 'draft',
+  video_id TEXT,
+  word_count INTEGER,
+  estimated_duration_seconds INTEGER,
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+-- Index สำหรับ performance 
+CREATE INDEX idx_video_id_null ON [YOUR_CHANNEL_NAME](video_id) 
+WHERE video_id IS NULL;
+
+-- Index สำหรับ status filtering
+CREATE INDEX idx_status ON [YOUR_CHANNEL_NAME](status);
+```
+
+### 🔧 ตัวอย่างการสร้าง Table
+
+```sql
+-- ตัวอย่าง: ช่อง Motivation Hub
+CREATE TABLE motivation_hub (
+  id SERIAL PRIMARY KEY,
+  title TEXT NOT NULL,
+  content TEXT NOT NULL,
+  status TEXT DEFAULT 'draft',
+  video_id TEXT,
+  word_count INTEGER,
+  estimated_duration_seconds INTEGER,
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+-- ตัวอย่าง: ช่อง Tech Tips
+CREATE TABLE tech_tips (
+  id SERIAL PRIMARY KEY,
+  title TEXT NOT NULL,
+  content TEXT NOT NULL,
+  status TEXT DEFAULT 'draft',
+  video_id TEXT,
+  word_count INTEGER,
+  estimated_duration_seconds INTEGER,
+  created_at TIMESTAMP DEFAULT NOW()
+);
+```
+
 ## 🔧 Setup Instructions
 
 ### Step 1: Import Workflow
