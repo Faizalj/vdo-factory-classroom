@@ -5,10 +5,10 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        560,
-        1580
+        420,
+        900
       ],
-      "id": "2fa1f32f-712e-4700-a0c7-1d353c4d33e2",
+      "id": "edbb591b-3f76-42b7-b39f-81c4d1db6deb",
       "name": "Limit"
     },
     {
@@ -18,10 +18,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        -100,
-        2240
+        -240,
+        1560
       ],
-      "id": "58949819-0f14-4b6c-aecf-a8258fbbcf48",
+      "id": "0ed279ad-1dce-4912-bf1a-bcc6392b38dc",
       "name": "Loop Over Items"
     },
     {
@@ -32,10 +32,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1840,
-        2240
+        1700,
+        1560
       ],
-      "id": "19e0dbee-aef7-4ac0-9e02-4a6f8581d1b0",
+      "id": "d533e5ce-ade7-4ef0-a525-32bd7e19ca3b",
       "name": "Get status of TTS generation",
       "retryOnFail": true
     },
@@ -124,10 +124,10 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        2000,
-        2240
+        1860,
+        1560
       ],
-      "id": "15c0289f-3c14-45b6-988a-08470b0fc723",
+      "id": "fd1a34b9-c79c-4bda-af25-d7421773e9d8",
       "name": "TTS status switch"
     },
     {
@@ -147,10 +147,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2700,
-        2100
+        2560,
+        1420
       ],
-      "id": "e2233536-f02c-4819-806b-3f6a57c89ab7",
+      "id": "56b0729c-a7b9-49b2-8549-b668a1a8f8c9",
       "name": "Start generating captioned TTS video"
     },
     {
@@ -161,10 +161,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3120,
-        2100
+        2980,
+        1420
       ],
-      "id": "1fa22181-fedc-41f9-936a-15fbd2f3f39f",
+      "id": "924819b8-7d7f-4a79-b971-59998d3af241",
       "name": "Get video generation status",
       "retryOnFail": true
     },
@@ -253,10 +253,10 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        3300,
-        2100
+        3160,
+        1420
       ],
-      "id": "cee36354-542c-40d3-bb4a-744ac7eb333d",
+      "id": "9c15a7f0-cbf9-4783-a5f0-be653a36432b",
       "name": "Video generation switch"
     },
     {
@@ -288,10 +288,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3560,
-        2300
+        3420,
+        1620
       ],
-      "id": "4804b409-375a-4f5d-9d45-3f4d92cfcd97",
+      "id": "813fa892-bcab-44fb-825e-566c99a1cf56",
       "name": "Setup media fields"
     },
     {
@@ -302,10 +302,10 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        -60,
-        2920
+        -200,
+        2240
       ],
-      "id": "191047d0-0b2a-483a-8baa-1c005bf683f8",
+      "id": "77478dd1-7e4a-48d7-a933-6c1efaf4b053",
       "name": "Combine loop items"
     },
     {
@@ -339,10 +339,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        140,
-        2920
+        0,
+        2240
       ],
-      "id": "80bafaab-2495-4aa6-a4d0-ebd33dd71c40",
+      "id": "aa7600bc-316c-4f16-833f-086b6624a639",
       "name": "Start merging the videos"
     },
     {
@@ -353,10 +353,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        560,
-        2920
+        420,
+        2240
       ],
-      "id": "729d3414-e8d2-4ff0-80e2-137371be2150",
+      "id": "1f3e2a76-e24f-45f8-94d2-d40746fe3fbb",
       "name": "Get status of the video merge"
     },
     {
@@ -444,10 +444,10 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        740,
-        2920
+        600,
+        2240
       ],
-      "id": "0f851274-8e6d-4e30-8038-40b9985843fd",
+      "id": "9679a4d5-5a6d-4930-af54-b1577852818f",
       "name": "Video merge status switch"
     },
     {
@@ -467,10 +467,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1560,
-        3780
+        1420,
+        3100
       ],
-      "id": "64f747c9-bf57-43ab-8d4b-c53e2a0d3648",
+      "id": "1153f1f1-fa9c-4bc2-9356-c9bda5b635d1",
       "name": "Setup final video download URL"
     },
     {
@@ -480,10 +480,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        1660,
-        2240
+        1520,
+        1560
       ],
-      "id": "3fb64d88-eb61-49f4-b861-634f83523d5b",
+      "id": "f6dcdd51-8083-49f6-bec9-9df36e7e7854",
       "name": "Wait until the TTS gets generated",
       "webhookId": "83468f41-991c-46ac-bd23-c092b5fa2009"
     },
@@ -522,10 +522,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1480,
-        2240
+        1340,
+        1560
       ],
-      "id": "ca214b37-19d3-4c22-bdbb-7d7e060d8bfc",
+      "id": "10ba7e9e-db81-4b93-bdd2-b8a5ed06ba7a",
       "name": "Start generating TTS (chatterbox)"
     },
     {
@@ -535,10 +535,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        2900,
-        2100
+        2760,
+        1420
       ],
-      "id": "8306ccc3-2d3a-435c-8f77-e76e3e0c0740",
+      "id": "177ac9fd-9d6b-4d56-853e-8f0b4bbb6531",
       "name": "Wait until the video gets generated",
       "webhookId": "f5d2f68d-7349-467f-91ba-a764081269eb"
     },
@@ -549,10 +549,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        360,
-        2920
+        220,
+        2240
       ],
-      "id": "00118aa4-66f3-4ea2-a41c-26b12783b4cd",
+      "id": "2c31d036-0aae-4180-a7fa-d28ae80e89f7",
       "name": "Wait until the videos gets merged together",
       "webhookId": "b7d7d8f6-b8f7-4b05-b943-ae3f202063a5"
     },
@@ -616,10 +616,10 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        1260,
-        2120
+        1120,
+        1440
       ],
-      "id": "6c231975-b36f-460a-8210-8b59d535c0b7",
+      "id": "7db76e38-9cd0-4d10-90cd-9a90a57fb2af",
       "name": "TTS switch"
     },
     {
@@ -639,10 +639,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2260,
-        2220
+        2120,
+        1540
       ],
-      "id": "fe5ab43e-d4ca-4af8-a913-6d6eab2ec9c5",
+      "id": "86eb76d3-6a33-47e9-8ab9-6dbbdc248159",
       "name": "Setup TTS file_id"
     },
     {
@@ -662,10 +662,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1420,
-        1460
+        1280,
+        780
       ],
-      "id": "08fdddce-8c71-4c3d-bfc2-6e283e43093a",
+      "id": "7769f3ca-3ac2-4434-92f2-87a13840ab02",
       "name": "Cleanup text"
     },
     {
@@ -681,10 +681,10 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        1240,
-        1640
+        1100,
+        960
       ],
-      "id": "fc30812c-0adf-4ecc-8697-b8ce5579b0b1",
+      "id": "5ccef997-f4a6-48f6-ad7d-8c56aa066208",
       "name": "OpenAI Chat Model",
       "credentials": {
         "openAiApi": {
@@ -710,10 +710,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2520,
-        2100
+        2380,
+        1420
       ],
-      "id": "8e41bd57-54f9-471c-84ef-f588450e163e",
+      "id": "e8a976c8-5a7e-4c32-85d5-d0a8d569a72a",
       "name": "Global TTS audio id"
     },
     {
@@ -725,10 +725,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        20,
-        1360
+        -120,
+        680
       ],
-      "id": "973f76b8-6886-482b-aeeb-ce33a49d3ad0",
+      "id": "cddb712a-3ef9-4357-bce3-e737369e24ae",
       "name": "Sticky Note4"
     },
     {
@@ -740,10 +740,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1060,
-        1360
+        920,
+        680
       ],
-      "id": "bf341a85-fcf3-47e9-9420-2fcc6bb53434",
+      "id": "72b57fde-11b9-481e-a9c5-de75ccd21316",
       "name": "Sticky Note5"
     },
     {
@@ -755,10 +755,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -160,
-        2800
+        -300,
+        2120
       ],
-      "id": "87dd4b0a-5932-4cff-aae9-56a79af40bb0",
+      "id": "d9311ff3-0e32-4803-8e3f-cdf6bfb50cfe",
       "name": "Sticky Note6"
     },
     {
@@ -770,10 +770,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1220,
-        1960
+        1080,
+        1280
       ],
-      "id": "8b07d6c3-b1ce-4e5b-8f0c-4333f009684c",
+      "id": "03627180-315b-4cbc-92ab-db70d514e6b7",
       "name": "Sticky Note8"
     },
     {
@@ -785,10 +785,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2460,
-        1960
+        2320,
+        1280
       ],
-      "id": "955ac760-aca0-4183-8f0e-a39c05196cfa",
+      "id": "d8a001c2-ffd6-4642-acc4-cc7c7d2b21f4",
       "name": "Sticky Note9"
     },
     {
@@ -800,10 +800,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1080,
-        2800
+        940,
+        2120
       ],
-      "id": "7f7b2f1e-78f2-490e-bf74-cbc9c00a6c7a",
+      "id": "64e6a68a-eaa2-4b83-be5e-8562c1249163",
       "name": "Sticky Note11"
     },
     {
@@ -814,10 +814,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1960,
-        3780
+        1820,
+        3100
       ],
-      "id": "23cf8765-d0bf-4842-979c-d4bf01aaf927",
+      "id": "34405d4a-95ba-4f1f-8729-eb5b33e8814b",
       "name": "Download the video"
     },
     {
@@ -830,10 +830,10 @@
       "type": "@n8n/n8n-nodes-langchain.informationExtractor",
       "typeVersion": 1.1,
       "position": [
-        1580,
-        1460
+        1440,
+        780
       ],
-      "id": "a39da281-f21d-4105-81e0-67e35828a2a0",
+      "id": "bc7c6a55-f005-47b8-8bdb-813a05536f25",
       "name": "Create the script"
     },
     {
@@ -845,10 +845,10 @@
       "type": "@n8n/n8n-nodes-langchain.chainLlm",
       "typeVersion": 1.7,
       "position": [
-        1120,
-        1460
+        980,
+        780
       ],
-      "id": "c84f0f75-2011-4cc6-abbe-a95a65db1d3e",
+      "id": "089f93c9-3101-4c64-a236-24c8fabd375b",
       "name": "Create the motivational speech"
     },
     {
@@ -859,10 +859,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        1740,
-        1620
+        1600,
+        940
       ],
-      "id": "c0127cbc-1efd-4176-9a4a-fdcffa517afa",
+      "id": "e676dd62-2878-49a6-9358-138862462eb5",
       "name": "Split Out"
     },
     {
@@ -875,10 +875,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1500,
-        3660
+        1360,
+        2980
       ],
-      "id": "463db480-c14e-4993-a568-ae7901379793",
+      "id": "dc5a6101-6a22-49e7-9ed1-264c7b55f76b",
       "name": "Sticky Note13"
     },
     {
@@ -912,13 +912,13 @@
           }
         }
       },
-      "id": "dbd12f5c-4bc0-44c8-a5dc-a5ba36bd8816",
+      "id": "87dcea56-0126-46b7-a5dc-3904bf216dff",
       "name": "Start Youtube upload",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        1760,
-        3780
+        1620,
+        3100
       ],
       "disabled": true
     },
@@ -942,13 +942,13 @@
         "inputDataFieldName": "data",
         "options": {}
       },
-      "id": "5dc66af4-6d5a-4360-b1f5-47be0d03c0ff",
+      "id": "a05d22a2-0ce9-40e4-8713-f7b37fec766c",
       "name": "Upload video to YouTube",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        2160,
-        3780
+        2020,
+        3100
       ],
       "disabled": true
     },
@@ -1059,10 +1059,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        240,
-        900
+        100,
+        220
       ],
-      "id": "cf2c6fdd-f7f4-4df3-8bee-4e052ab07493",
+      "id": "7a519642-edf4-4e6b-81c6-2e5abe168914",
       "name": "Configure me"
     },
     {
@@ -1075,10 +1075,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        140,
-        680
+        0,
+        0
       ],
-      "id": "dfd533d3-80d6-407d-bf8b-98af4a0c709c",
+      "id": "d7c24782-530a-4109-8be9-b35b9338ab25",
       "name": "Sticky Note12"
     },
     {
@@ -1108,10 +1108,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        680,
-        1580
+        540,
+        900
       ],
-      "id": "5de57f0a-49a1-486f-b22c-a7944ec2b23f",
+      "id": "68b41981-16c8-465e-8d69-479941745ca2",
       "name": "If"
     },
     {
@@ -1121,10 +1121,10 @@
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        860,
-        1420
+        720,
+        740
       ],
-      "id": "5ce5300f-856c-4d1e-9903-e37613e0d9b6",
+      "id": "504aa1f9-463b-40e8-8f20-742900ad74f8",
       "name": "No more stories"
     },
     {
@@ -1135,10 +1135,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        600,
-        780
+        460,
+        100
       ],
-      "id": "ccd8c405-0d6f-4c38-8c5c-30bd58447277",
+      "id": "614d06f0-4069-44db-910f-583fae7c465f",
       "name": "HTTP Request",
       "onError": "continueErrorOutput"
     },
@@ -1149,10 +1149,10 @@
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        600,
-        1040
+        460,
+        360
       ],
-      "id": "3bf9407e-5ab6-4b26-8e07-a4abc11815ce",
+      "id": "f81f5577-55fa-4b7b-9277-d2713142c338",
       "name": "Server isn't ready"
     },
     {
@@ -1164,10 +1164,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        480,
-        680
+        340,
+        0
       ],
-      "id": "121c5e1c-7495-4059-b2b2-11917d2fc3b5",
+      "id": "1be53423-0822-443a-9051-9f860ef91934",
       "name": "Sticky Note15"
     },
     {
@@ -1179,10 +1179,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2440,
-        3440
+        2300,
+        2760
       ],
-      "id": "3072aede-24c5-4fdf-a4c9-544fc44abdcf",
+      "id": "57cd6909-b282-4ecb-a2a6-fbe1dfb277db",
       "name": "Sticky Note"
     },
     {
@@ -1202,10 +1202,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2480,
-        3560
+        2340,
+        2880
       ],
-      "id": "496a5348-1554-464b-8ee4-ccd734394a36",
+      "id": "58a4049a-ab5c-4dba-bc70-6031341222be",
       "name": "Set file ids to delete"
     },
     {
@@ -1217,10 +1217,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2800,
-        3560
+        2660,
+        2880
       ],
-      "id": "e9e8c425-cbac-4224-8314-98fc695fc50d",
+      "id": "f5bf2a37-19ba-4ff1-b032-b94d0fe959e0",
       "name": "Delete tmp files"
     },
     {
@@ -1231,10 +1231,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        2640,
-        3560
+        2500,
+        2880
       ],
-      "id": "b2dd1e09-a3d4-41fb-b8d5-0f8110340fbc",
+      "id": "b1dbdced-5238-4fbc-b000-ee7951ee4f01",
       "name": "For each file"
     },
     {
@@ -1248,10 +1248,10 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        440,
-        1580
+        300,
+        900
       ],
-      "id": "99087fc3-d261-42cb-8274-a00072c76880",
+      "id": "70566ede-41f0-459a-9842-98a7f61d3364",
       "name": "Get row for processing",
       "alwaysOutputData": true
     },
@@ -1284,10 +1284,10 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        1220,
-        2980
+        1080,
+        2300
       ],
-      "id": "b4ee1a94-3f89-423d-8924-d72e6b58ea2a",
+      "id": "7d44f952-1c6f-45c3-ba54-98d5d66d6fde",
       "name": "Save video id to the db",
       "credentials": {
         "supabaseApi": {
@@ -1306,10 +1306,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1500,
-        2800
+        1360,
+        2120
       ],
-      "id": "1fd6c09a-87a5-4d29-a265-d4e407b53a90",
+      "id": "10e7d336-80ec-4a0c-9664-39470235e5bc",
       "name": "Sticky Note20"
     },
     {
@@ -1320,10 +1320,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1600,
-        2920
+        1460,
+        2240
       ],
-      "id": "e86c4a0f-cc98-4ff8-ba69-7236cb4e44e2",
+      "id": "1fc949d7-8fbc-4082-b691-1c83aada6642",
       "name": "Download the video for Postiz"
     },
     {
@@ -1348,10 +1348,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1820,
-        2920
+        1680,
+        2240
       ],
-      "id": "81320f9b-0d7f-4559-b9e4-9b1698ee8b39",
+      "id": "6949cb92-94f3-4d57-840c-040a4adee614",
       "name": "Upload video to Postiz"
     },
     {
@@ -1364,10 +1364,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2040,
-        2920
+        1900,
+        2240
       ],
-      "id": "0a3cef4f-fc2c-44f7-9477-8d349a335a2a",
+      "id": "520782b2-c612-409a-9174-e3b47c78953a",
       "name": "Get Postiz integrations"
     },
     {
@@ -1378,10 +1378,10 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        2220,
-        2920
+        2080,
+        2240
       ],
-      "id": "6ef6b2c2-c8dc-490f-8270-ca51f0de9c8e",
+      "id": "5e78c668-93c1-4c0e-98d7-6f976d0cf1a8",
       "name": "Merge integrations"
     },
     {
@@ -1401,10 +1401,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1580,
-        3400
+        1440,
+        2720
       ],
-      "id": "825df739-bbb4-4f93-84c5-3d3aab616696",
+      "id": "bac00438-2329-47e9-ad74-4170db32cfeb",
       "name": "Set integration id for YouTube"
     },
     {
@@ -1421,10 +1421,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2120,
-        3400
+        1980,
+        2720
       ],
-      "id": "7e22442d-3c4f-42a5-be80-a9931ece4635",
+      "id": "732f2506-0ea3-4048-a633-f9c93ff5fb1f",
       "name": "Schedule YouTube video"
     },
     {
@@ -1436,10 +1436,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1540,
-        3100
+        1400,
+        2420
       ],
-      "id": "b870d5b9-50ea-4649-b6b3-65cd40ca3a2f",
+      "id": "4fa9a54f-9742-4cd0-b7b3-6813ee798592",
       "name": "Sticky Note1"
     },
     {
@@ -1447,10 +1447,10 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -120,
-        720
+        -260,
+        40
       ],
-      "id": "0b7c5125-f645-43a1-87ea-e6c622c911a5",
+      "id": "8ec78562-3d56-47a1-bf41-4f43621fd54b",
       "name": "When clicking 'Execute workflow'"
     },
     {
@@ -1485,12 +1485,18 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        280,
-        2140
+        140,
+        1460
       ],
-      "id": "e64007d5-892c-4586-8c2e-0f2f6530f440",
+      "id": "bac538f5-a0e3-49b0-bb02-ce1b6b3adc3f",
       "name": "Generate AI image",
       "alwaysOutputData": false,
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "moweCBk6GwTWmnub",
+          "name": "Together AI test"
+        }
+      },
       "onError": "continueErrorOutput"
     },
     {
@@ -1518,10 +1524,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        600,
-        2020
+        460,
+        1340
       ],
-      "id": "821bafb1-17ad-4445-9fd5-d506a5c2236f",
+      "id": "7a1121c0-1c79-4d76-9f3f-4c6abdccff9f",
       "name": "Upload image to server",
       "retryOnFail": true
     },
@@ -1532,10 +1538,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        600,
-        2260
+        460,
+        1580
       ],
-      "id": "20f4561f-b4af-4eb4-90b7-4cec6d6c739d",
+      "id": "a842a81a-c84a-4e22-a8e4-fba4d533e37d",
       "name": "Wait for the error / rate limit to go away",
       "webhookId": "18721630-ff12-4eb6-8a9a-c0d229d2b66d"
     },
@@ -1548,10 +1554,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        160,
-        1940
+        20,
+        1260
       ],
-      "id": "91824846-9542-49ae-ab9a-9844f9a08e9d",
+      "id": "e3682144-ffab-44bd-9a2c-ad9703125c39",
       "name": "Sticky Note2"
     },
     {
@@ -1562,10 +1568,10 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        280,
-        1580
+        140,
+        900
       ],
-      "id": "3e5d0414-c8eb-4463-b862-0ab4f189fcfb",
+      "id": "5f637ce3-fca1-4110-b10d-7af3cf5795d3",
       "name": "Aggregate1"
     },
     {
@@ -1579,12 +1585,18 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        120,
-        1580
+        -20,
+        900
       ],
-      "id": "29d09c0f-e431-4aed-8b96-6c92971fd1b6",
+      "id": "13763944-00b1-4024-a893-5f76faf477da",
       "name": "Check if data exists1",
-      "alwaysOutputData": true
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "yTGA7D95MEtsyEAb",
+          "name": "Supabase account 2"
+        }
+      }
     },
     {
       "parameters": {
@@ -1597,11 +1609,263 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -120,
-        960
+        -260,
+        280
       ],
-      "id": "eebcdfb6-ec6a-4d16-9877-d7647ca48a40",
+      "id": "23f5b0d0-afcd-4b6f-9bc0-267513a57780",
       "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "channel_name",
+              "name": "channel_name",
+              "value": "Motivation Hub",
+              "type": "string"
+            },
+            {
+              "id": "supabase_table",
+              "name": "supabase_table",
+              "value": "motivation_hub",
+              "type": "string"
+            },
+            {
+              "id": "content_categories",
+              "name": "content_categories",
+              "value": [
+                "daily motivation and inspiration",
+                "personal development",
+                "goal setting and achievement",
+                "overcoming challenges",
+                "success stories and lessons",
+                "mindset transformation",
+                "self-confidence building",
+                "productivity and focus",
+                "resilience and perseverance",
+                "positive thinking"
+              ],
+              "type": "array"
+            },
+            {
+              "id": "content_types",
+              "name": "content_types",
+              "value": [
+                "motivational speech",
+                "inspirational story",
+                "success tip",
+                "mindset shift",
+                "life lesson",
+                "daily reminder",
+                "actionable advice"
+              ],
+              "type": "array"
+            },
+            {
+              "id": "target_audience",
+              "name": "target_audience",
+              "value": "Young professionals, students, and anyone seeking motivation and personal growth",
+              "type": "string"
+            },
+            {
+              "id": "content_language",
+              "name": "content_language",
+              "value": "English",
+              "type": "string"
+            },
+            {
+              "id": "content_style",
+              "name": "content_style",
+              "value": "uplifting, empowering, practical, and action-oriented",
+              "type": "string"
+            },
+            {
+              "id": "content_length",
+              "name": "content_length",
+              "value": "60-90 seconds when spoken",
+              "type": "string"
+            },
+            {
+              "id": "batch_size",
+              "name": "batch_size",
+              "value": 5,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -220,
+        -600
+      ],
+      "id": "e76ea154-483d-4192-ade7-1ae3eff0d508",
+      "name": "Channel Configuration"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-nano",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-NANO"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "You are an expert content creator specializing in engaging YouTube content. You understand both Thai and international audiences and can create content that resonates with specific target demographics.",
+              "role": "system"
+            },
+            {
+              "content": "={{ 'Create ' + $('Channel Configuration').item.json.batch_size + ' different compelling YouTube video content pieces for the channel: ' + $('Channel Configuration').item.json.channel_name + '\\n\\n' + 'Channel Focus: ' + $('Channel Configuration').item.json.content_categories.join(', ') + '\\n' + 'Content Types: ' + $('Channel Configuration').item.json.content_types.join(', ') + '\\n' + 'Target Audience: ' + $('Channel Configuration').item.json.target_audience + '\\n' + 'Content Style: ' + $('Channel Configuration').item.json.content_style + '\\n' + 'Video Length: ' + $('Channel Configuration').item.json.content_length + '\\n\\n' + 'Requirements:\\n' + '- Create ' + $('Channel Configuration').item.json.batch_size + ' unique video concepts\\n' + '- Each should have strong YouTube appeal (clickable titles)\\n' + '- Content should be practical and engaging\\n' + '- Consider trending topics in tech/digital space\\n' + '- Make titles SEO-friendly for YouTube search\\n' + '- Include clear value proposition in each video\\n\\n' + 'Format your response exactly as:\\n\\n' + 'VIDEO_1:\\n' + 'TITLE: [Compelling YouTube video title with strong hook]\\n' + 'CONTENT: [Complete video script with clear structure: intro hook, main content, conclusion]\\n\\n' + 'VIDEO_2:\\n' + 'TITLE: [Next video title]\\n' + 'CONTENT: [Next video script]\\n\\n' + 'Continue for all ' + $('Channel Configuration').item.json.batch_size + ' videos' }}"
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -120,
+        -760
+      ],
+      "id": "690c019c-bd94-4c97-af95-28df3c04e5a3",
+      "name": "Generate Video Content",
+      "credentials": {
+        "openAiApi": {
+          "id": "AA65xz9Vi0Pnrj5E",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// ทำความสะอาด content ก่อน\nconst rawContent = $input.first().json.message.content;\nconst cleanedContent = rawContent\n  .replace(/\\*/g, '')    // ลบเฉพาะ * ตัวเดียว\n  .trim();               // ตัด space หน้า-หลัง\n\n// ดึงข้อมูล channel จาก config\nconst channelConfig = $('Channel Configuration').item.json;\n\n// Split เป็นแต่ละวิดีโอ\nconst videoPieces = cleanedContent.split(/VIDEO_\\d+:/i);\nconst results = [];\n\nvideoPieces.forEach((piece, index) => {\n  if (piece.trim() && index > 0) { // skip first empty piece\n    // Parse แต่ละวิดีโอ\n    const titleMatch = piece.match(/TITLE:\\s*([^\\n]*)/i);\n    const contentMatch = piece.match(/CONTENT:\\s*([\\s\\S]*?)(?=VIDEO_|$)/i);\n    \n    const title = titleMatch ? titleMatch[1].trim() : `Video Content ${index}`;\n    const content = contentMatch ? contentMatch[1].trim().replace(/\\\\n/g, '\\n') : '';\n    \n    // คำนวณ word count (ประมาณ)\n    const wordCount = content.split(' ').filter(word => word.length > 0).length;\n    \n    results.push({\n      title: title,\n      content: content,\n      status: 'draft',\n      channel_id: channelConfig.channel_id,\n      channel_name: channelConfig.channel_name,\n      word_count: wordCount,\n      estimated_duration_seconds: Math.round(wordCount * 0.5), // Thai content speaks slower\n      created_at: new Date().toISOString()\n    });\n  }\n});\n\n// Return array of items\nreturn results.map(item => ({ json: item }));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        180,
+        -500
+      ],
+      "id": "c106ebb1-4d23-49cc-ad2f-54c006fb0621",
+      "name": "Parse Video Content"
+    },
+    {
+      "parameters": {
+        "tableId": "={{ $('Channel Configuration').item.json.supabase_table }}",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "title",
+              "fieldValue": "={{ $json.title }}"
+            },
+            {
+              "fieldId": "content",
+              "fieldValue": "={{ $json.content }}"
+            },
+            {
+              "fieldId": "status",
+              "fieldValue": "={{ $json.status }}"
+            },
+            {
+              "fieldId": "word_count",
+              "fieldValue": "={{ $json.word_count }}"
+            },
+            {
+              "fieldId": "estimated_duration_seconds",
+              "fieldValue": "={{ $json.estimated_duration_seconds }}"
+            },
+            {
+              "fieldId": "created_at",
+              "fieldValue": "={{ $json.created_at }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        380,
+        -600
+      ],
+      "id": "87f576eb-8999-45e3-9803-c39346baac38",
+      "name": "Save to Channel Table",
+      "credentials": {
+        "supabaseApi": {
+          "id": "MjvtAjWTwzxms326",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        580,
+        -600
+      ],
+      "id": "f01b3b7c-40c9-40a4-afb8-6ba4d65cfb55",
+      "name": "Aggregate Results"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "summary",
+              "name": "summary",
+              "value": "={{ '🎬 Video Content Generation Complete!\\n\\n' + '📺 Channel: ' + $('Channel Configuration').item.json.channel_name + '\\n' + '📊 Table: ' + $('Channel Configuration').item.json.supabase_table + '\\n' + '🌐 Language: ' + $('Channel Configuration').item.json.content_language + '\\n' + '📝 Generated: ' + $('Aggregate Results').item.json.data.length + ' video scripts\\n' + '⏱️ Total Duration: ~' + Math.round($('Aggregate Results').item.json.data.reduce((sum, item) => sum + (item.estimated_duration_seconds || 0), 0) / 60) + ' minutes of content\\n\\n' + '📋 Generated Video Titles:\\n' + $('Aggregate Results').item.json.data.map((item, index) => (index + 1) + '. ' + item.title).join('\\n') + '\\n\\n' + '✅ All content saved with status: draft\\n' + '🔄 Ready for video generation workflow!' }}",
+              "type": "string"
+            },
+            {
+              "id": "total_videos",
+              "name": "total_videos",
+              "value": "={{ $('Aggregate Results').item.json.data.length }}",
+              "type": "number"
+            },
+            {
+              "id": "channel_info",
+              "name": "channel_info",
+              "value": "={{ { channel_name: $('Channel Configuration').item.json.channel_name, table_name: $('Channel Configuration').item.json.supabase_table, language: $('Channel Configuration').item.json.content_language } }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        780,
+        -600
+      ],
+      "id": "ad9944e1-84b2-47b1-9f62-e8f3a34426b3",
+      "name": "Create Channel Report"
+    },
+    {
+      "parameters": {
+        "content": "",
+        "width": 2040,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -540,
+        -280
+      ],
+      "id": "5f706909-7d07-4920-86ad-fbaf0bbe370d",
+      "name": "Sticky Note3"
     }
   ],
   "connections": {
@@ -2173,6 +2437,61 @@
         [
           {
             "node": "Aggregate1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Channel Configuration": {
+      "main": [
+        [
+          {
+            "node": "Generate Video Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video Content": {
+      "main": [
+        [
+          {
+            "node": "Parse Video Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Video Content": {
+      "main": [
+        [
+          {
+            "node": "Save to Channel Table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save to Channel Table": {
+      "main": [
+        [
+          {
+            "node": "Aggregate Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate Results": {
+      "main": [
+        [
+          {
+            "node": "Create Channel Report",
             "type": "main",
             "index": 0
           }
