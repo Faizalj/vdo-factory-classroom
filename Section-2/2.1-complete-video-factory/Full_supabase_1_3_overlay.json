@@ -19,8 +19,8 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        -120,
-        2320
+        -260,
+        2180
       ],
       "id": "ff3a3799-65b2-47d6-9d6f-2d1bb1d86796",
       "name": "Loop Over Items"
@@ -33,8 +33,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1540,
-        2300
+        1400,
+        2160
       ],
       "id": "7eb65010-ef6d-43eb-879e-86471c02bd8b",
       "name": "Get status of TTS generation",
@@ -125,8 +125,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        1700,
-        2300
+        1560,
+        2160
       ],
       "id": "d6063e20-f3ef-4ca9-88ed-b53877fb3245",
       "name": "TTS status switch"
@@ -148,8 +148,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2420,
-        2160
+        2280,
+        2020
       ],
       "id": "abf020b1-be1f-4bb4-be96-9f16d89b6a84",
       "name": "Start generating captioned TTS video"
@@ -162,8 +162,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2840,
-        2160
+        2700,
+        2020
       ],
       "id": "7c2bf8fa-ec9f-4d01-bdc7-b7ca9b09a10d",
       "name": "Get video generation status",
@@ -254,8 +254,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        3020,
-        2160
+        2880,
+        2020
       ],
       "id": "9cf303ea-2cc2-4722-a853-7772196712bb",
       "name": "Video generation switch"
@@ -289,8 +289,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3280,
-        2360
+        3140,
+        2220
       ],
       "id": "0f92860c-1555-481b-8819-ae114f35db7c",
       "name": "Setup media fields"
@@ -303,8 +303,8 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        100,
-        2760
+        120,
+        2560
       ],
       "id": "931e9d39-558a-4dfc-bdca-a8018b8b0c52",
       "name": "Combine loop items"
@@ -340,8 +340,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        300,
-        2760
+        320,
+        2560
       ],
       "id": "69d713f3-913f-4c2e-b99a-adfd4f6452ab",
       "name": "Start merging the videos"
@@ -354,8 +354,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        720,
-        2760
+        740,
+        2560
       ],
       "id": "f2879967-d8d3-4334-a2f4-1b88ed4ca877",
       "name": "Get status of the video merge"
@@ -445,8 +445,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        900,
-        2760
+        920,
+        2560
       ],
       "id": "c9c1de0a-36f6-4d0b-b461-c38dd6ec23e7",
       "name": "Video merge status switch"
@@ -469,7 +469,7 @@
       "typeVersion": 3.4,
       "position": [
         3100,
-        3560
+        3420
       ],
       "id": "cb678797-dae6-4426-b0dd-cbb72f543c44",
       "name": "Setup final video download URL"
@@ -481,8 +481,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        1360,
-        2300
+        1220,
+        2160
       ],
       "id": "ab9f8ec3-15df-4c73-93e2-5f898b946956",
       "name": "Wait until the TTS gets generated",
@@ -523,8 +523,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1180,
-        2300
+        1040,
+        2160
       ],
       "id": "817edecf-0716-494e-8985-86b9dae39ad7",
       "name": "Start generating TTS (chatterbox)"
@@ -536,8 +536,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        2620,
-        2160
+        2480,
+        2020
       ],
       "id": "31558290-475c-45a1-8aa8-3025c4c4f834",
       "name": "Wait until the video gets generated",
@@ -550,8 +550,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        520,
-        2760
+        540,
+        2560
       ],
       "id": "a6f1ea85-1846-4291-9560-10d8585dbb9e",
       "name": "Wait until the videos gets merged together",
@@ -617,8 +617,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        960,
-        2180
+        820,
+        2040
       ],
       "id": "6c603b12-5ccd-4cc8-b145-de2f9af0fd68",
       "name": "TTS switch"
@@ -640,8 +640,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1960,
-        2280
+        1820,
+        2140
       ],
       "id": "eef5f2fc-14e6-436e-a8a6-f6cb0816ed5c",
       "name": "Setup TTS file_id"
@@ -711,8 +711,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2240,
-        2160
+        2100,
+        2020
       ],
       "id": "2f2f9a9a-0e9a-44c7-8ffe-e36e02762efb",
       "name": "Global TTS audio id"
@@ -756,8 +756,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        0,
-        2640
+        20,
+        2440
       ],
       "id": "c3eb5a66-9f54-4443-ac17-b8a72f5349b8",
       "name": "Sticky Note6"
@@ -771,8 +771,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        920,
-        2020
+        780,
+        1880
       ],
       "id": "e970bcea-d8da-43ce-a576-bc8a4e77ed31",
       "name": "Sticky Note8"
@@ -786,8 +786,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2180,
-        2020
+        2040,
+        1880
       ],
       "id": "196f164d-0e9b-4776-8c65-cb5735a5b1c5",
       "name": "Sticky Note9"
@@ -802,7 +802,7 @@
       "typeVersion": 1,
       "position": [
         2620,
-        2580
+        2440
       ],
       "id": "1eae9866-e414-496f-83cc-8eb56f4425a1",
       "name": "Sticky Note11"
@@ -816,7 +816,7 @@
       "typeVersion": 4.2,
       "position": [
         3500,
-        3560
+        3420
       ],
       "id": "69d3415b-62b5-4a5e-bad0-317e3a74689e",
       "name": "Download the video"
@@ -877,7 +877,7 @@
       "typeVersion": 1,
       "position": [
         3040,
-        3440
+        3300
       ],
       "id": "bb392168-52d5-434a-bfa8-c87946591fe9",
       "name": "Sticky Note13"
@@ -919,7 +919,7 @@
       "typeVersion": 4.1,
       "position": [
         3320,
-        3560
+        3420
       ],
       "disabled": true
     },
@@ -949,7 +949,7 @@
       "typeVersion": 4.1,
       "position": [
         3700,
-        3560
+        3420
       ],
       "disabled": true
     },
@@ -1060,8 +1060,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        240,
-        880
+        120,
+        1020
       ],
       "id": "48006223-f7fd-4e75-8aa2-206ed92a38af",
       "name": "Configure me"
@@ -1076,8 +1076,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        120,
-        760
+        0,
+        900
       ],
       "id": "b74d5767-f5b4-4ec5-a71b-14474d4315b4",
       "name": "Sticky Note12"
@@ -1136,8 +1136,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        580,
-        860
+        460,
+        1000
       ],
       "id": "45f49e0f-0cb3-4d50-bc5b-4640d781d8e5",
       "name": "HTTP Request",
@@ -1150,8 +1150,8 @@
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        580,
-        1120
+        460,
+        1260
       ],
       "id": "91e4dcce-5d1f-4cc7-ab6c-6dbf5e8491ec",
       "name": "Server isn't ready"
@@ -1165,8 +1165,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        460,
-        760
+        340,
+        900
       ],
       "id": "edfb99d2-fb0b-4de6-8737-aecff7f146ad",
       "name": "Sticky Note15"
@@ -1181,7 +1181,7 @@
       "typeVersion": 1,
       "position": [
         3980,
-        3220
+        3080
       ],
       "id": "6a46beb3-0cee-4fdc-baa0-fa1d9985b435",
       "name": "Sticky Note"
@@ -1204,7 +1204,7 @@
       "typeVersion": 3.4,
       "position": [
         4020,
-        3340
+        3200
       ],
       "id": "3c2d0175-c5c7-4d29-a3b6-356e7afd7698",
       "name": "Set file ids to delete"
@@ -1219,7 +1219,7 @@
       "typeVersion": 4.2,
       "position": [
         4340,
-        3340
+        3200
       ],
       "id": "565b8cb9-0f0c-4c45-8c02-b7a5427f1319",
       "name": "Delete tmp files"
@@ -1233,7 +1233,7 @@
       "typeVersion": 1,
       "position": [
         4180,
-        3340
+        3200
       ],
       "id": "1a325429-4435-47ea-b891-37c5c0c4d189",
       "name": "For each file"
@@ -1292,7 +1292,7 @@
       "typeVersion": 1,
       "position": [
         2760,
-        2760
+        2620
       ],
       "id": "649fe7ca-d7f0-44b1-9973-2291a05778f6",
       "name": "Save video id to the db",
@@ -1314,7 +1314,7 @@
       "typeVersion": 1,
       "position": [
         3040,
-        2580
+        2440
       ],
       "id": "b57d7b36-93a8-4f45-afb9-c03760c23216",
       "name": "Sticky Note20"
@@ -1328,7 +1328,7 @@
       "typeVersion": 4.2,
       "position": [
         3140,
-        2700
+        2560
       ],
       "id": "c91f5f1e-57a1-48ec-af7e-92cd3a06ee06",
       "name": "Download the video for Postiz"
@@ -1356,7 +1356,7 @@
       "typeVersion": 4.2,
       "position": [
         3360,
-        2700
+        2560
       ],
       "id": "57e7dcb9-15aa-46cc-a55c-e163fe52bb67",
       "name": "Upload video to Postiz"
@@ -1372,7 +1372,7 @@
       "typeVersion": 4.2,
       "position": [
         3580,
-        2700
+        2560
       ],
       "id": "225c7d9f-c89a-4a35-8527-dbd4833f1550",
       "name": "Get Postiz integrations"
@@ -1386,7 +1386,7 @@
       "typeVersion": 1,
       "position": [
         3760,
-        2700
+        2560
       ],
       "id": "e82f38dc-7659-4421-a0a0-3d3f2a8172a8",
       "name": "Merge integrations"
@@ -1409,7 +1409,7 @@
       "typeVersion": 3.4,
       "position": [
         3120,
-        3180
+        3040
       ],
       "id": "a602e913-555d-4a65-aa31-99d3fbe07ab9",
       "name": "Set integration id for YouTube"
@@ -1429,7 +1429,7 @@
       "typeVersion": 4.2,
       "position": [
         3660,
-        3180
+        3040
       ],
       "id": "794fdd4b-2afb-47f9-ab49-8532f79fa9c3",
       "name": "Schedule YouTube video"
@@ -1444,7 +1444,7 @@
       "typeVersion": 1,
       "position": [
         3080,
-        2880
+        2740
       ],
       "id": "0d64bf8a-dfe9-4a09-876e-a22b9e257616",
       "name": "Sticky Note1"
@@ -1454,8 +1454,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -140,
-        800
+        -260,
+        940
       ],
       "id": "9d680c27-736f-473a-af88-c5f779535799",
       "name": "When clicking 'Execute workflow'"
@@ -1492,8 +1492,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        260,
-        2220
+        120,
+        2080
       ],
       "id": "61c68251-0852-4e69-a97a-2891536d3f32",
       "name": "Generate AI image",
@@ -1531,8 +1531,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        580,
-        2100
+        440,
+        1960
       ],
       "id": "c78635e1-9b69-4129-a337-b2fb3f8d6764",
       "name": "Upload image to server",
@@ -1545,8 +1545,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        580,
-        2340
+        440,
+        2200
       ],
       "id": "c98d021e-5868-48a1-ac7a-d4373dd77add",
       "name": "Wait for the error / rate limit to go away",
@@ -1561,8 +1561,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        140,
-        2020
+        0,
+        1880
       ],
       "id": "c5aacffc-76a5-489e-b621-325fe321f60f",
       "name": "Sticky Note2"
@@ -1616,8 +1616,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -140,
-        1040
+        -260,
+        1180
       ],
       "id": "cb0f594a-a347-4877-9fde-fce51af59aba",
       "name": "Schedule Trigger"
@@ -1899,7 +1899,7 @@
       "typeVersion": 4.2,
       "position": [
         1500,
-        2740
+        2600
       ],
       "id": "47556d8f-c236-475d-a6ce-69c523a841bd",
       "name": "Upload overlay to the server"
@@ -1913,7 +1913,7 @@
       "typeVersion": 4.2,
       "position": [
         1320,
-        2740
+        2600
       ],
       "id": "73b7fa19-0f4d-46e3-8199-3964c2cd77ff",
       "name": "Download example overlay"
@@ -1926,7 +1926,7 @@
       "typeVersion": 1.1,
       "position": [
         1900,
-        2740
+        2600
       ],
       "id": "267dcad0-6386-41a1-b48f-58cdf05bb0fb",
       "name": "Wait until the videos gets merged together1",
@@ -1964,7 +1964,7 @@
       "typeVersion": 4.2,
       "position": [
         1680,
-        2740
+        2600
       ],
       "id": "8130f16b-f261-48c2-a728-2918742aeaba",
       "name": "Start adding overlay to thevideo"
@@ -1978,7 +1978,7 @@
       "typeVersion": 4.2,
       "position": [
         2100,
-        2740
+        2600
       ],
       "id": "1394b92d-6f29-4c9d-b155-0b61b368ad25",
       "name": "Get status of the overlay"
@@ -2069,7 +2069,7 @@
       "typeVersion": 3.2,
       "position": [
         2340,
-        2780
+        2640
       ],
       "id": "e325d973-6801-4d2c-b19a-c84cf20c24a1",
       "name": "Overlay status"
@@ -2078,13 +2078,14 @@
       "parameters": {
         "content": "# Add overlay",
         "height": 360,
-        "width": 1320
+        "width": 1320,
+        "color": 7
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
         1260,
-        2580
+        2440
       ],
       "id": "627dd560-5c75-4f85-a184-be668c1439e2",
       "name": "Sticky Note10"
@@ -2810,7 +2811,7 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "cc4ed284-4d60-4b20-b305-7627d1e8269b",
+  "versionId": "4f4229e0-9a67-405a-bb7d-b4e9db4338bf",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "339979314200287f32affa09285453b9225a94604e8beacf6d02da846d7818bd"
