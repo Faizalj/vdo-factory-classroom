@@ -1906,7 +1906,7 @@
     },
     {
       "parameters": {
-        "url": "https://github.com/gyoridavid/ai_agents_az/raw/refs/heads/main/episode_16/overlay_black.mp4",
+        "url": "https://github.com/Faizalj/vdo-factory-classroom/blob/main/Resource/overlay_black.mp4",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
